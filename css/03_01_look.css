@@ -1,0 +1,189 @@
+body {
+  background-color: #2c231d;
+}
+#header.h_discover_look {
+  background-color: #2c231d;
+  .nav-link,
+  .navbar-brand {
+    color: white;
+  }
+}
+/*  */
+.down {
+  height: 0;
+  padding: 0 !important;
+  overflow: hidden;
+  transition: all 400ms;
+}
+
+.up {
+  height: 96px;
+  transition: all 400ms;
+}
+/*  */
+#show_menu_right {
+  background-color: #2c231d;
+}
+/*  */
+
+#discover_look .look_div {
+  width: 50%;
+  height: 100vh;
+  position: relative;
+}
+.look_div .look_img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.look_div .look_cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.look_div .look_cover:hover {
+  background-color: #2c231d90;
+}
+
+.look_div .look_cover .si_title {
+  position: relative;
+  width: 90%;
+  height: fit-content;
+  display: flex;
+  padding: 0 10px;
+  color: white;
+  /* top: 50%; */
+  opacity: 0;
+}
+.look_div .look_cover .si_box {
+  position: relative;
+  width: 90%;
+  min-height: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px 0;
+  /* top: 50%; */
+  opacity: 0;
+}
+
+.look_div .look_cover .si_box .si_div {
+  width: 30%;
+  max-height: 100%;
+  background-color: white;
+  padding: 5px 10px;
+  position: relative;
+  /*  */
+  .si_cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px;
+  }
+}
+.look_div .look_cover .si_box .si_div > img {
+  object-fit: contain;
+}
+/* 單品販售中顯示文字 */
+.si_cover .onsale_text {
+  text-transform: uppercase;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 0.8rem;
+}
+/* 單品hover時顯示的內容 */
+.si_cover .after_h {
+  display: none;
+  text-transform: uppercase;
+  span {
+    font-family: Century Schoolbook !important;
+  }
+  .sm_text {
+    text-transform: none;
+    text-decoration: underline;
+    font-size: 0.8rem;
+  }
+}
+
+.si_cover .after_h .span {
+  width: fit-content;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: white;
+  font-size: 0.8rem;
+}
+.look_div .look_cover .si_box .si_div .si_cover:hover {
+  background-color: #2c231d90;
+  .before_h {
+    display: none;
+  }
+  .after_h {
+    display: block;
+    color: white;
+    span {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+/*  */
+.si_show {
+  /* top: 0%; */
+  opacity: 1;
+  animation-name: si_show !important;
+  animation-duration: 0.6s !important;
+  animation-fill-mode: forwards !important;
+}
+.si_show_back {
+  /* top: 50%; */
+  opacity: 0;
+  animation-name: si_show_back !important;
+  animation-duration: 0.6s !important;
+  animation-fill-mode: forwards !important;
+}
+
+/* ---------------------animation------------------ */
+
+@keyframes si_show {
+  0% {
+    /* top: 50%; */
+    opacity: 0;
+  }
+
+  100% {
+    /* top: 0%; */
+    opacity: 1;
+  }
+}
+
+@keyframes si_show_back {
+  0% {
+    /* top: 0%; */
+    opacity: 1;
+  }
+
+  100% {
+    /* top: 50%; */
+    opacity: 0;
+  }
+}
+/*  */
+#footer {
+  height: 100px;
+}
+.footer_text {
+  color: white;
+  text-transform: uppercase;
+  font-family: Century Schoolbook;
+  /* font-weight: 100; */
+}
+/*  */

@@ -1,0 +1,246 @@
+#header {
+  /* height: 60px; */
+  position: fixed;
+  z-index: 6;
+  background-color: #9b5656;
+}
+#header .header_logo {
+  justify-self: center !important;
+}
+
+/* ---------------------可通用--------------------- */
+.show_block,
+.active {
+  display: block;
+}
+
+/* ------------------------------------------------ */
+/*  */
+#main {
+  padding: 84px 0 0 0;
+}
+/*  */
+
+#sidebar {
+  width: 15%;
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 84px;
+}
+#sidebar .photo {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 35px;
+  background-color: #9b5656;
+  border-radius: 50%;
+}
+#sidebar .photo img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+#sidebar .link {
+  width: fit-content;
+  height: 200px;
+  /* margin: 0; */
+}
+#sidebar .link ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#sidebar .link a {
+  width: fit-content;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  padding: 5px 12px;
+  /* display: flex; */
+  align-items: end;
+  text-transform: uppercase;
+}
+
+#sidebar .link img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+/*  */
+#sidebar .link.logout {
+  height: fit-content;
+  padding-bottom: 10px;
+  margin-left: -25px;
+}
+#sidebar .sidebar_btn_box {
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  color: #cccccc;
+  transition: all 0.5s;
+  .bx {
+    margin-right: 10px;
+    line-height: 1.1rem;
+  }
+}
+#sidebar .sidebar_btn_box:hover {
+  color: #9b5656;
+}
+/* 上方分類按鈕的區塊設定 */
+#item {
+  width: 85%;
+  height: calc(100% - 60px);
+  position: absolute;
+  top: 60px;
+  left: 15%;
+  background-color: transparent;
+  margin: 0;
+}
+
+#item #classes {
+  width: 80%;
+  height: 94px;
+  padding: 24px 50px 0 50px;
+}
+
+#item .class_item {
+  height: fit-content;
+  text-transform: uppercase;
+}
+#item .class_item a {
+  background-color: whitesmoke;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+#item .class_item a:hover {
+  background-color: black;
+  color: white;
+}
+#item .class_item a:focus {
+  background-color: black;
+  color: white;
+}
+
+/* title的區塊設定 */
+#item .main_item .title {
+  height: 60px;
+  position: relative;
+}
+#item .main_item .title .title_item {
+  font-size: 1.5rem;
+  /* background-color: #8d5e5e; */
+  width: fit-content;
+  position: absolute;
+  bottom: 0;
+  left: 6%;
+  text-transform: uppercase;
+}
+#item .main_item .title .title_item .t_sub {
+  position: relative;
+  right: 5px;
+  bottom: 1rem;
+  font-size: 1rem;
+}
+/*  */
+
+/* #show_clothing 區塊相關設定 */
+#item #show_clothing .main_item .show .show_item {
+  height: 200px;
+}
+
+/* #show_onsale 區塊相關設定 */
+#item #show_onsale .main_item .show .show_item {
+  border-radius: 20px;
+  height: 350px;
+}
+#item #show_onsale .main_item .show .show_item .pic img {
+  border-radius: 20px;
+}
+
+/* #show_look 區塊相關設定 */
+#item #show_look .look {
+  height: 90%;
+}
+
+#item #show_look .text {
+  height: 10%;
+  /* background-color: #9b5656; */
+  /* align-items: center; */
+}
+
+#item #show_look .main_item .show .show_item {
+  width: 48%;
+  height: 600px;
+  border-radius: 40px;
+}
+
+#item #show_look .show .look_pic img,
+#item #show_look .show .look_pic_cover {
+  border-radius: 40px;
+}
+
+#item #show_look .show .look_pic_cover {
+  background-color: rgba(255, 255, 255, 0);
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#item #show_look .show .look_pic_cover .edit_icon {
+  width: 50px;
+  height: 50px;
+  background-color: #2a878f;
+  border-radius: 50%;
+}
+#item #show_look .show .look_pic_cover:hover {
+  background-color: rgba(172, 186, 187, 0.25);
+}
+
+#item #show_look .show .look_item_block {
+  height: calc(100% / 3);
+  /* background-color: rgba(0, 0, 0, 0.255); */
+  padding: 5px 10px;
+  /* border-bottom: #9b5656 1px dashed; */
+}
+#item #show_look .show .look_item_block:nth-child(3n) {
+  border-bottom: none;
+}
+#item #show_look .show .look_item_block img {
+  object-fit: contain;
+}
+#item #show_look .show .share_icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* #show_dashboard 區塊相關設定 */
+#item #show_dashboard .main_item .show .show_item {
+  width: 100%;
+  border-radius: 40px;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
+/* 右下角按鈕設定 */
+#item #btn {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+#item #btn .btn_item {
+  margin: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: #cccccc;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+#item #btn .btn_item:hover {
+  background-color: #9b5656;
+}
+#item #btn .btn_item img {
+  transform: translateY(-2px);
+}

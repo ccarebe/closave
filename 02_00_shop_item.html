@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/00_style.css" />
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/00_default.js"></script>
+    <script src="./js/02_00_show_item.js"></script>
+    <title>衣儲 CloSave | 綠色時尚，衣物的再生之旅</title>
+    <style id="workAround"></style>
+    <style>
+      #header {
+        background-color: white;
+      }
+      #header .nav-link,
+      .navbar-brand {
+        color: black;
+        font-size: 12px;
+        font-weight: 400;
+        text-align: center;
+      }
+
+      /*  */
+      #item {
+        width: 100%;
+        /* height: calc(100% - 84px); */
+        position: absolute;
+        top: 96px;
+        background-color: transparent;
+      }
+      #item .main_item {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 50px;
+      }
+      /* 最上方產品分類頁面 */
+      #item .title {
+        height: 60px;
+        margin: auto;
+        /* background-color: antiquewhite; */
+        display: flex;
+        align-items: end;
+      }
+      #item .title .title_item {
+        width: 55%;
+        /* background-color: #9b5656; */
+      }
+      .title_item .t_main {
+        width: 490px;
+        margin: auto;
+        font-size: 0.8rem;
+        text-transform: capitalize;
+        /* background-color: white; */
+      }
+      #item .show {
+        /* background-color: antiquewhite; */
+      }
+      #item .show .show_item {
+        /* width: 50%; */
+        height: 100%;
+        /* border: 1px dashed saddlebrown; */
+      }
+      /* 左半部 */
+      #item .show .show_item_left {
+        /* background-color: aqua; */
+        width: 55%;
+      }
+      #item .show .show_item_left #div-show {
+        width: 500px;
+        height: 600px;
+        text-align: center;
+        border: 5px solid transparent;
+      }
+
+      #div-cont {
+        position: relative;
+        width: 500px;
+        height: 150px;
+        overflow: hidden;
+        /* background-color: antiquewhite; */
+      }
+
+      #btnPrev {
+        width: 40px;
+        height: 40px;
+        background-image: url("./image/icon/09_backward.png");
+        background-size: cover;
+        position: absolute;
+        top: 35%;
+        left: 5%;
+        cursor: pointer;
+      }
+
+      #btnNext {
+        width: 40px;
+        height: 40px;
+        background-image: url("./image/icon/10_forward.png");
+        background-size: cover;
+        position: absolute;
+        top: 35%;
+        right: 5%;
+        cursor: pointer;
+      }
+
+      #div-select {
+        height: 100%;
+        width: 300%;
+        position: absolute;
+        /* background-color: black; */
+        left: -0%;
+        transition: 1.5s;
+        display: flex;
+      }
+
+      #div-select div {
+        height: 100%;
+        width: calc(100% / 9);
+      }
+
+      #div-select img {
+        width: 100%;
+        height: 100%;
+      }
+      .addBorder {
+        border: 5px solid transparent;
+      }
+      .showBorder {
+        border-color: #9b5656;
+      }
+      /* 右半部 */
+      #item .show .show_item_right {
+        width: 45%;
+        background-color: white;
+      }
+      .show_item_right table {
+        font-size: 1.25rem;
+        text-transform: capitalize;
+      }
+      .show_item_right table td {
+        padding-bottom: 10px;
+      }
+      .show_item_right table td span {
+        padding-right: 5px;
+      }
+
+      .show_item_right table .l_text {
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .show_item_right table .m_text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      /*  */
+      .color_box {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: rgb(222, 222, 121);
+      }
+      /*  */
+      .size_box,
+      .status_box {
+        width: 60px;
+        height: 30px;
+        background-color: #bcbcbc;
+        color: white;
+        /* text-align: center; */
+      }
+      .status_box {
+        width: 120px;
+      }
+      /*  */
+      .amount_box {
+        width: fit-content;
+      }
+      .amount_input {
+        width: 200px;
+        height: 35px;
+
+        display: flex;
+      }
+      .ab_item {
+        border: 1px solid #bcbcbc;
+
+        height: 100%;
+        cursor: pointer;
+      }
+      .ab_main input {
+        background-color: transparent;
+        border: none;
+        transition: all 0.5s;
+      }
+      .ab_main input:focus {
+        border: 1px solid #9b5656;
+        outline: 0;
+      }
+      .ab_btnl {
+        border-radius: 50px 0 0 50px;
+        border-right: 0;
+      }
+      .ab_btnr {
+        border-radius: 0 50px 50px 0;
+        border-left: 0;
+      }
+      /* 隱藏數字按鈕 */
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+      /*  */
+      .btn_box {
+        width: fit-content;
+      }
+      .btn_box .bb_cart {
+        width: 300px;
+        height: 40px;
+        line-height: 40px;
+        color: white;
+        text-align: center;
+        background-color: black;
+        cursor: pointer;
+        transition: all 0.5s;
+      }
+      .btn_box .bb_cart:hover {
+        background-color: #2a878f;
+      }
+      .btn_box .bb_wish {
+        margin-left: 10px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: all 0.5s;
+      }
+      .btn_box .bb_wish:hover {
+        margin-top: -5px;
+      }
+      /*  */
+      .s_text {
+        font-size: 0.8rem;
+      }
+      #nav-tabContent table {
+        font-size: 1rem;
+      }
+      #nav-tabContent table.t2 {
+        width: 90%;
+      }
+      #nav-tabContent table.t2 tr,
+      #nav-tabContent table.t2 td {
+        padding: 10px;
+        border-bottom: 1px solid rgb(175, 175, 175);
+      }
+      #nav-tabContent table.t2 td {
+        width: 50%;
+      }
+      #nav-tabContent table.t2 td:last-child {
+        text-align: center;
+      }
+      /*  */
+      #nav-detail-tab,
+      #nav-size-tab {
+        text-transform: capitalize;
+        font-weight: 500;
+      }
+      .nav-tabs .nav-link.active {
+        color: black !important;
+      }
+      .nav-tabs .nav-link {
+        color: gray !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="header" class="container-fluid py-3">
+        <nav class="navbar navbar-expand-lg">
+          <div
+            id="navbar_container"
+            class="container-fluid d-flex justify-content-between"
+          >
+            <div class="header_left header_item ms-lg-5">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="01_newin.html">NEW IN</a>
+                </li>
+                <li class="nav-item ni_1">
+                  <a class="nav-link">SHOP</a>
+                </li>
+                <li class="nav-item ni_2">
+                  <a class="nav-link">EXPLORES</a>
+                </li>
+              </ul>
+            </div>
+            <div class="header_logo">
+              <a class="navbar-brand fs-2 m-0" href="index.html">CLOSAVE</a>
+            </div>
+            <div class="header_right header_item me-lg-5">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">SEARCH</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="05_00_account.html">ACCOUNT</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    role="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#demo"
+                    >BAG</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="07_01_closet.html">CLOSET</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- show menu側邊選單欄 -->
+      <div id="show_menu" class="w-100">
+        <div id="show_menu_left" class="show_menu_item w-50">
+          <img src="" alt="" class="w-100" />
+        </div>
+        <div id="show_menu_right" class="show_menu_item w-50">
+          <!-- shop選單 -->
+          <div class="show_menu_nav show_menu_nav1 d-none">
+            <nav>
+              <ul
+                class="navbar-nav d-flex flex-column text-white col-9 col-lg-6 m-auto ms-lg-5"
+              >
+                <li class="">
+                  <a class="nav-link" href="02_01_tops.html">tops</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_02_bottoms.html">bottoms</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_03_outers.html">outers</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_04_dress_suits.html"
+                    >dresses / sets</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_05_bags_shoes.html"
+                    >bags / shoes</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_06_accessories.html"
+                    >accessories</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link fs-6 fw-lighter" href="02_shop.html"
+                    ><i>SHOP ALL &#8594;</i></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- explore選單 -->
+          <div class="show_menu_nav show_menu_nav2 d-none">
+            <nav>
+              <ul
+                class="navbar-nav d-flex flex-column text-white col-9 col-lg-6 m-auto ms-lg-5"
+              >
+                <li class="">
+                  <a class="nav-link" href="03_01_aboutus.html">about us</a>
+                </li>
+                <hr />
+                <li class="">
+                  <a class="nav-link" href="03_02_founderslook.html"
+                    >Founders Wardrobe Diaries</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="03_03_memberslook.html"
+                    >members Style Showcase</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div id="item" class="container-fluid p-0">
+          <div class="main_item">
+            <!-- 上方title -->
+            <div class="title">
+              <div class="title_item">
+                <span class="d-block t_main text-muted"
+                  ><a class="text-muted" href="02_shop.html">all</a> >
+                  <span class="text-black">tops</span></span
+                >
+              </div>
+            </div>
+            <div class="show d-flex w-100 justify-content-center">
+              <!-- 左半部slidebar -->
+              <div
+                class="show_item show_item_left d-flex flex-column align-items-center position-relative"
+              >
+                <div id="div-show">
+                  <img
+                    id="show"
+                    class="w-100 h-100 object-fit-cover"
+                    src="./image/v_img1.jpg"
+                  />
+                </div>
+                <div id="div-cont" class="">
+                  <div id="div-select">
+                    <div id="div0" class="addBorder">
+                      <img src="./image/v_img1.jpg" />
+                    </div>
+                  </div>
+                </div>
+                <div id="btnPrev"></div>
+                <div id="btnNext"></div>
+              </div>
+              <!-- 右半部相關資訊 -->
+              <div
+                class="show_item show_item_right d-flex flex-column align-items-center"
+              >
+                <div class="w-75">
+                  <table class="w-100">
+                    <!-- 物品名稱 -->
+                    <tr>
+                      <td>
+                        <span class="l_text">
+                          Secret love knit set in beige
+                        </span>
+                      </td>
+                    </tr>
+                    <!-- 物品價格 -->
+                    <tr>
+                      <td>
+                        <span class="m_text">$1,999 TWD</span>
+                        <span class="text-decoration-line-through fs-6">
+                          $2,980 TWD</span
+                        >
+                      </td>
+                    </tr>
+                    <!-- 物品顏色 -->
+                    <tr>
+                      <td class="d-flex align-items-center">
+                        <span class="fw-medium">Color:</span>
+                        <span>Beige</span>
+                        <span class="color_box d-inline-block"></span>
+                      </td>
+                    </tr>
+                    <!-- 物品尺寸 -->
+                    <tr>
+                      <td>
+                        <span class="fw-medium">size: </span>
+                        <div>
+                          <div
+                            class="size_box d-flex justify-content-center align-items-center"
+                          >
+                            <span class="p-0">S</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- 物品狀態 -->
+                    <tr>
+                      <td>
+                        <span class="fw-medium">status: </span>
+                        <div>
+                          <div
+                            class="status_box d-flex justify-content-center align-items-center"
+                          >
+                            <span class="p-0">80% new</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- 數量選擇 -->
+                    <tr>
+                      <td>
+                        <div>
+                          <div
+                            class="amount_box d-flex justify-content-center align-items-center mt-3 mb-2"
+                          >
+                            <div class="amount_input">
+                              <div
+                                class="ab_item ab_btn ab_btnl col-2 d-flex align-items-center justify-content-center p-2"
+                              >
+                                <img
+                                  class="w-100 h-100 object-fit-cover"
+                                  src="./image/icon/11_minus.png"
+                                  alt="minus"
+                                />
+                              </div>
+                              <div class="ab_item ab_main col-8">
+                                <input
+                                  class="w-100 h-100 p-2 fw-medium"
+                                  type="number"
+                                  name="p_amount"
+                                  id="p_amount"
+                                  value="1"
+                                />
+                              </div>
+                              <div
+                                class="ab_item ab_btn ab_btnr col-2 d-flex align-items-center justify-content-center p-2"
+                              >
+                                <img
+                                  class="w-100 h-100 object-fit-cover"
+                                  src="./image/icon/12_plus.png"
+                                  alt="add"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- 按鈕區 -->
+                    <tr>
+                      <td>
+                        <div class="btn_box d-flex">
+                          <div class="bb_item bb_cart shadow">ADD TO CART</div>
+                          <div class="bb_item bb_wish p-1">
+                            <img
+                              class="w-100 h-100 object-fit-cover"
+                              src="./image/icon/05_wishlist.png"
+                              alt="wishlist"
+                            />
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                  <table class="w-100 d-none">
+                    <!-- ------------------detail---------------------- -->
+                    <!-- 品牌 -->
+                    <tr>
+                      <td>
+                        <hr />
+                        <span class="fw-medium">brand: </span>
+                        <span>xxx</span>
+                      </td>
+                    </tr>
+                    <!-- 成分 -->
+                    <tr>
+                      <td>
+                        <span class="fw-medium">fabric: </span>
+                        <span>83% Viscose 17% Polyester</span>
+                      </td>
+                    </tr>
+                    <!-- 產地 -->
+                    <tr>
+                      <td>
+                        <span class="fw-medium">production:</span>
+                        <span>taiwan</span>
+                      </td>
+                    </tr>
+                    <!-- 類別 -->
+                    <tr>
+                      <td>
+                        <span class="fw-medium">category:</span>
+                        <span>dress</span>
+                      </td>
+                    </tr>
+                    <!-- 季節 -->
+                    <tr>
+                      <td>
+                        <span class="fw-medium">season to wear:</span>
+                        <span>winter</span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!-- tab -->
+                <div class="w-75 mt-4">
+                  <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                      <button
+                        class="nav-link active"
+                        id="nav-detail-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#nav-detail"
+                        type="button"
+                        role="tab"
+                        aria-controls="nav-detail"
+                        aria-selected="true"
+                      >
+                        details
+                      </button>
+                      <button
+                        class="nav-link"
+                        id="nav-size-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#nav-size"
+                        type="button"
+                        role="tab"
+                        aria-controls="nav-size"
+                        aria-selected="false"
+                      >
+                        size guide
+                      </button>
+                    </div>
+                  </nav>
+                  <div id="nav-tabContent" class="tab-content p-3">
+                    <!-- tab1 -->
+                    <div
+                      class="tab-pane fade show active"
+                      id="nav-detail"
+                      role="tabpanel"
+                      aria-labelledby="nav-detail-tab"
+                      tabindex="0"
+                    >
+                      <table class="si_detail w-100">
+                        <!-- 品牌 -->
+                        <tr>
+                          <td>
+                            <span class="fw-medium">brand: </span>
+                            <span>xxx</span>
+                          </td>
+                        </tr>
+                        <!-- 成分 -->
+                        <tr>
+                          <td>
+                            <span class="fw-medium">fabric: </span>
+                            <span>83% Viscose 17% Polyester</span>
+                          </td>
+                        </tr>
+                        <!-- 產地 -->
+                        <tr>
+                          <td>
+                            <span class="fw-medium">production:</span>
+                            <span>taiwan</span>
+                          </td>
+                        </tr>
+                        <!-- 類別 -->
+                        <tr>
+                          <td>
+                            <span class="fw-medium">category:</span>
+                            <span>dress</span>
+                          </td>
+                        </tr>
+                        <!-- 季節 -->
+                        <tr>
+                          <td>
+                            <span class="fw-medium">season to wear:</span>
+                            <span>winter</span>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <!-- tab2 -->
+                    <div
+                      class="tab-pane fade"
+                      id="nav-size"
+                      role="tabpanel"
+                      aria-labelledby="nav-size-tab"
+                      tabindex="0"
+                    >
+                      <div class="my-2 text-center">
+                        <span class="fs-5 text-capitalize">product size</span>
+                        <br />
+                        <span class="text-uppercase s_text">(unit:cm)</span>
+                      </div>
+                      <table class="t2 mx-auto">
+                        <tr class="">
+                          <td></td>
+                          <td id="size">s</td>
+                        </tr>
+                        <!-- 褲長 裙長 衣長 -->
+                        <tr>
+                          <td class="fw-medium">&#11037;&nbsp;Full Length</td>
+                          <td id="full">68</td>
+                        </tr>
+                        <!-- 肩寬 -->
+                        <tr>
+                          <td class="fw-medium">&#11037;&nbsp;Shoulder</td>
+                          <td id="shoulder">42</td>
+                        </tr>
+                        <!-- 胸圍 -->
+                        <tr>
+                          <td class="fw-medium">&#11037;&nbsp;Bust</td>
+                          <td id="bust">64</td>
+                        </tr>
+                        <!-- 腰圍 -->
+                        <tr>
+                          <td class="fw-medium">&#11037;&nbsp;Waist</td>
+                          <td id="waist">64</td>
+                        </tr>
+                        <!-- 臀圍 -->
+                        <tr>
+                          <td class="fw-medium">&#11037;&nbsp;Hip</td>
+                          <td id="hip">64</td>
+                        </tr>
+                        <!-- 袖長 -->
+                        <tr>
+                          <td class="fw-medium">&#11037;&nbsp;Sleeve Length</td>
+                          <td id="sleeve">78.5</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- <footer>
+      <div id="footer"></div>
+    </footer> -->
+  </body>
+</html>

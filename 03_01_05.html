@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/00_style.css" />
+    <link rel="stylesheet" href="./css/01_shop_style.css" />
+    <link rel="stylesheet" href="./css/03_01_look.css" />
+    <link rel="stylesheet" href="./css/03_02_aboutus.css" />
+    <!-- js -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/00_default.js"></script>
+    <script src="./js/01_shop_default.js"></script>
+    <title>About us - CloSave</title>
+    <style>
+      /*  */
+      .div_word {
+        width: 40%;
+        .btn_box {
+          right: 0;
+        }
+      }
+
+      /*  */
+      .div_pic {
+        width: 60%;
+        padding: 4%;
+        border-right: 25px solid white;
+        .btn_box {
+          left: 0;
+        }
+        .img_box {
+          position: relative;
+
+          .img1 {
+            width: 90%;
+            height: 82%;
+          }
+          .img2 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 28%;
+            height: 50%;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="main" class="aboutus p-5">
+        <video autoplay muted loop>
+          <source src="./video/video1.2.mp4" type="video/mp4" />
+        </video>
+
+        <div class="cover">
+          <div class="show_box d-flex flex-column justify-content-start">
+            <a href="03_01_aboutus.html" class="bx bx-undo fs-2"></a>
+            <div class="empty_div"></div>
+            <div class="show_up d-flex">
+              <!-- 左半部 -->
+              <div class="div_word">
+                <div class="btn_box">
+                  <a href="03_01_04.html">
+                    <i class="bx bxs-left-arrow"></i>
+                  </a>
+                </div>
+                <div class="title_box">
+                  <div class="title1">
+                    <span>Our Vision for a Sustainable Future</span>
+                  </div>
+                  <div class="title2">
+                    <span>
+                      We believe that changing how we view and handle clothing
+                      is key to combating climate change, protecting the oceans,
+                      and creating a greener, more sustainable world.
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- 右半部 -->
+              <div class="div_pic">
+                <div class="btn_box">
+                  <a href="03_01_06.html">
+                    <i class="bx bxs-right-arrow"></i>
+                  </a>
+                </div>
+                <div class="img_box">
+                  <div class="img1 shadow">
+                    <img src="./image/h_img1.jpg" alt="" />
+                  </div>
+                  <div class="img2 shadow">
+                    <img src="./image/v_img21.jpg" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="empty_div"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

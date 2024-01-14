@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/00_style.css" />
+    <link rel="stylesheet" href="./css/07_style.css" />
+    <link rel="stylesheet" href="./css/07_04_dashboard.css" />
+    <!-- js -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/07_04_dashboard.js"></script>
+    <title>07_04_dashboard</title>
+  </head>
+
+  <body>
+    <main>
+      <div id="main" class="container-fluid d-flex">
+        <!-- sidebar -->
+        <div
+          id="sidebar"
+          class="dashboard d-flex flex-column align-items-center justify-content-between"
+        >
+          <div class="d-flex flex-column align-items-center">
+            <div class="photo shadow">
+              <img src="./image/user.png" alt="user" />
+            </div>
+            <div class="link">
+              <ul class="h-100 d-flex flex-column justify-content-between">
+                <li>
+                  <a class="d-flex" href="07_01_closet.html">
+                    <!-- <img src="./image/icon/00_homePage_black.png" alt="" /> -->
+
+                    <!-- <span>CLOTHING</span> -->
+                  </a>
+                </li>
+                <li>
+                  <a class="d-flex" href="07_02_onsale.html">
+                    <!-- <img src="./image/icon/01_onSale_black.png" alt="" />
+                    <span>ON SALE</span> -->
+                  </a>
+                </li>
+                <li>
+                  <a class="d-flex" href="07_03_look.html">
+                    <!-- <img src="./image/icon/02_book_black.png" alt="" />
+                    <span>LOOK</span> -->
+                  </a>
+                </li>
+                <li>
+                  <a class="d-flex active" href="#">
+                    <!-- <img src="./image/icon/03_dashboard_black.png" alt="" />
+                    <span>DASHBOARD</span> -->
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="link logout">
+            <a href="05_00_account.html">
+              <div class="sidebar_btn_box">
+                <i class="bx bx-log-out bx-sm"></i>
+                <span>log out</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div id="item" class="container-fluid p-0">
+          <!-- 04_dashboard區塊 -->
+          <div id="show_dashboard" class="h-100 pb-3 pe-3">
+            <div class="show_item shadow h-100 p-3">
+              <div id="wrapper">
+                <!-- 身型資訊 -->
+                <div
+                  class="content1 d-flex flex-column justify-content-between"
+                >
+                  <div class="d-flex align-items-center">
+                    <div class="d_icon">
+                      <img src="./image/icon/13_female.png" alt="" />
+                    </div>
+                    <div>
+                      <span id="m_name" class="text24 fw-semibold">
+                        rebecca wu
+                      </span>
+                      <span>(<span id="m_age">23</span>)</span>
+                    </div>
+                  </div>
+                  <div class="d-flex col-lg-5 justify-content-between ps-4">
+                    <div class="d-inline-block">
+                      <span class="text-muted fw-medium">height:</span>
+                      <span id="m_height" class="text24 fw-semibold">162</span>
+                      <span class="unit">cm</span>
+                    </div>
+                    <div class="d-inline-block">
+                      <span class="text-muted fw-medium">weight:</span>
+                      <span id="m_weight" class="text24 fw-semibold">49</span>
+                      <span class="unit">kg</span>
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex col-lg-10 justify-content-between mb-3 ps-4"
+                  >
+                    <div class="d-inline-block">
+                      <span class="text-muted fw-medium">shoulder:</span>
+                      <span id="m_shoulder" class="fw-semibold">39</span>
+                      <span class="unit">cm</span>
+                    </div>
+                    <div class="d-inline-block">
+                      <span class="text-muted fw-medium">bust:</span>
+                      <span id="m_bust" class="fw-semibold">39</span>
+                      <span class="unit">cm</span>
+                    </div>
+                    <div class="d-inline-block">
+                      <span class="text-muted fw-medium">waist:</span>
+                      <span id="m_waist" class="fw-semibold">63</span>
+                      <span class="unit">cm</span>
+                    </div>
+                    <div class="d-inline-block">
+                      <span class="text-muted fw-medium">hip:</span>
+                      <span id="m_hip" class="fw-semibold">39</span>
+                      <span class="unit">cm</span>
+                    </div>
+                  </div>
+                  <!-- 右上角編輯圖示 -->
+                  <div class="create_btn d_icon">
+                    <img src="./image/icon/20_create_gray.png" alt="" />
+                  </div>
+                  <!-- 右下角編輯時間 -->
+                  <div class="modify_text">
+                    <span class="text-muted">
+                      Last Modified: <span id="m_size_date">2023-12-09</span>
+                    </span>
+                  </div>
+                </div>
+                <!-- 物品資訊 -->
+                <div class="content2 d-flex flex-column">
+                  <span class="text24">items</span>
+                  <span id="i_total" class="text64 fw-medium">68</span>
+                  <div class="percent">
+                    <span class="increase">&#8593;<span>8.2%</span></span>
+                    <span class="text12 text-muted">since last year</span>
+                  </div>
+                  <!-- 右上角圖示 -->
+                  <div class="create_btn d_icon">
+                    <img src="./image/icon/23_closet.png" alt="" />
+                  </div>
+                  <div class="">
+                    <canvas id="pie" height="200" width="200" />
+                  </div>
+                </div>
+                <!-- 消費紀錄 -->
+                <div class="content3 d-flex flex-column">
+                  <span class="text24"
+                    >Accumulated consumption in
+                    <span class="fw-semibold">2023</span></span
+                  >
+                  <span class="text40 fw-medium text-uppercase">
+                    nt$ <span id="c_total">6,800</span>
+                  </span>
+                  <div class="percent">
+                    <span class="increase">&#8593;<span>8.2%</span></span>
+                    <span class="text12 text-muted">since last year</span>
+                  </div>
+                  <div id="bar_chart" class="d-flex">
+                    <div>
+                      <div class="bc_item mon1"></div>
+                      <span class="text12 text-muted py-1">jan</span>
+                    </div>
+                    <div>
+                      <div class="bc_item mon2"></div>
+                      <span class="text12 text-muted py-1">feb</span>
+                    </div>
+                    <div>
+                      <div class="bc_item mon3"></div>
+                      <span class="text12 text-muted py-1">mar</span>
+                    </div>
+                    <div>
+                      <div class="bc_item mon4"></div>
+                      <span class="text12 text-muted py-1">apr</span>
+                    </div>
+                    <div>
+                      <div class="bc_item mon5"></div>
+                      <span class="text12 text-muted py-1">may</span>
+                    </div>
+                    <div>
+                      <div class="bc_item mon6"></div>
+                      <span class="text12 text-muted py-1">jun</span>
+                    </div>
+                    <div>
+                      <div class="bc_item mon7"></div>
+                      <span class="text12 text-muted py-1">jul</span>
+                    </div>
+                    <div>
+                      <div class="bc_item mon8"></div>
+                      <span class="text12 text-muted py-1">aug</span>
+                    </div>
+                    <div>
+                      <div class="bc_item mon9"></div>
+                      <span class="text12 text-muted py-1">sep</span>
+                    </div>
+                    <div>
+                      <div class="bc_item mon10 active position-relative">
+                        <div class="msg">
+                          <div
+                            class="s1 d-flex justify-content-center align-items-center"
+                          >
+                            <span class="text12 text-white"
+                              >nt$ <span>3,500</span></span
+                            >
+                          </div>
+                          <div class="s2"></div>
+                        </div>
+                      </div>
+                      <span class="text12 text-muted py-1">oct</span>
+                    </div>
+                    <div>
+                      <div class="bc_item mon11 py-1"></div>
+                      <span class="text12 text-muted py-1">nov</span>
+                    </div>
+                    <div class="">
+                      <div class="bc_item mon12 active position-relative">
+                        <div class="msg">
+                          <div
+                            class="s1 d-flex justify-content-center align-items-center"
+                          >
+                            <span class="text12 text-white"
+                              >nt$ <span>3,500</span></span
+                            >
+                          </div>
+                          <div class="s2"></div>
+                        </div>
+                      </div>
+                      <span class="text12 text-muted py-1">dec</span>
+                    </div>
+                  </div>
+                  <div class="line"></div>
+                  <div class="detail shadow p-2">
+                    <span class="fw-medium">Consumption classification</span>
+                    <div class="w-100 p-2 mt-2">
+                      <div class="cc_item cc_i1 w-100 d-flex">
+                        <div class="d_icon p-1 me-2">
+                          <img src="./image/icon/14_tops_black.png" alt="" />
+                        </div>
+                        <div class="w-100">
+                          <div class="d-flex justify-content-between pe-1">
+                            <div>
+                              <span class="fw-medium me-1">tops</span>
+                              <span id="cc_rate" class="text-muted"> 30%</span>
+                            </div>
+                            <span class="text-uppercase" style="color: #d84c4c"
+                              >nt$ <span id="cc_price">2,300</span></span
+                            >
+                          </div>
+                          <div class="h_bar">
+                            <div class="bar_item"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cc_item cc_i2 w-100 d-flex">
+                        <div class="d_icon p-1 me-2">
+                          <img src="./image/icon/19_acc_black.png" alt="" />
+                        </div>
+                        <div class="w-100">
+                          <div class="d-flex justify-content-between pe-1">
+                            <div>
+                              <span class="fw-medium me-1">accessories</span>
+                              <span id="cc_rate" class="text-muted">
+                                50.72%</span
+                              >
+                            </div>
+                            <span class="text-uppercase" style="color: #d84c4c"
+                              >nt$ <span id="cc_price">2,300</span></span
+                            >
+                          </div>
+                          <div class="h_bar">
+                            <div class="bar_item"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 搭配資訊 -->
+                <div class="content4 d-flex flex-column">
+                  <span class="text24">looks</span>
+                  <span id="l_total" class="text64 fw-medium">8</span>
+                  <div class="percent">
+                    <span class="increase">&#8593;<span>8.2%</span></span>
+                    <span class="text12 text-muted">since last year</span>
+                  </div>
+                  <!-- 右上角圖示 -->
+                  <div class="create_btn d_icon">
+                    <img src="./image/icon/02_book_black.png" alt="" />
+                  </div>
+                </div>
+                <!-- 販售中物品 -->
+                <div class="content5">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <span class="text24 ms-2">items on sale</span>
+                    <span class="show_all"
+                      ><a
+                        class="text12 text-decoration-underline"
+                        href="07_02_onsale.html"
+                        >show all</a
+                      ></span
+                    >
+                  </div>
+
+                  <div>
+                    <table class="ios_table">
+                      <!-- table標題 -->
+                      <tr class="row1">
+                        <th>name</th>
+                        <th>brand</th>
+                        <th>size</th>
+                        <th>status</th>
+                        <th>price</th>
+                        <th>date</th>
+                      </tr>
+                      <!-- row -->
+                      <tr>
+                        <td>
+                          <div class="p_icon">
+                            <img
+                              src="image/item/remove_bg/00_acc_01_00.png"
+                              alt=""
+                            />
+                          </div>
+                          <span id="p_name">Lorem ipsum dolor</span>
+                        </td>
+                        <td>
+                          <span id="p_brand">zara</span>
+                        </td>
+                        <td>
+                          <span id="p_size">f</span>
+                        </td>
+                        <td>
+                          <span id="p_status">80%new</span>
+                        </td>
+                        <td>
+                          <span id="p_price" class="text-uppercase"
+                            >nt$ <span>999</span></span
+                          >
+                        </td>
+                        <td>
+                          <span id="p_date">2023-01-02</span>
+                        </td>
+                      </tr>
+                      <!-- row -->
+                      <tr>
+                        <td>
+                          <div class="p_icon">
+                            <img
+                              src="image/item/remove_bg/00_acc_01_00.png"
+                              alt=""
+                            />
+                          </div>
+                          <span id="p_name">Lorem ipsum dolor</span>
+                        </td>
+                        <td>
+                          <span id="p_brand">zara</span>
+                        </td>
+                        <td>
+                          <span id="p_size">f</span>
+                        </td>
+                        <td>
+                          <span id="p_status">80%new</span>
+                        </td>
+                        <td>
+                          <span id="p_price" class="text-uppercase"
+                            >nt$ <span>999</span></span
+                          >
+                        </td>
+                        <td>
+                          <span id="p_date">2023-01-02</span>
+                        </td>
+                      </tr>
+                      <!-- row -->
+                      <tr>
+                        <td>
+                          <div class="p_icon">
+                            <img
+                              src="image/item/remove_bg/00_acc_01_00.png"
+                              alt=""
+                            />
+                          </div>
+                          <span id="p_name">Lorem ipsum dolor</span>
+                        </td>
+                        <td>
+                          <span id="p_brand">zara</span>
+                        </td>
+                        <td>
+                          <span id="p_size">f</span>
+                        </td>
+                        <td>
+                          <span id="p_status">80%new</span>
+                        </td>
+                        <td>
+                          <span id="p_price" class="text-uppercase"
+                            >nt$ <span>999</span></span
+                          >
+                        </td>
+                        <td>
+                          <span id="p_date">2023-01-02</span>
+                        </td>
+                      </tr>
+                      <!-- row -->
+                      <tr>
+                        <td>
+                          <div class="p_icon">
+                            <img
+                              src="image/item/remove_bg/00_acc_01_00.png"
+                              alt=""
+                            />
+                          </div>
+                          <span id="p_name">Lorem ipsum dolor</span>
+                        </td>
+                        <td>
+                          <span id="p_brand">zara</span>
+                        </td>
+                        <td>
+                          <span id="p_size">f</span>
+                        </td>
+                        <td>
+                          <span id="p_status">80%new</span>
+                        </td>
+                        <td>
+                          <span id="p_price" class="text-uppercase"
+                            >nt$ <span>999</span></span
+                          >
+                        </td>
+                        <td>
+                          <span id="p_date">2023-01-02</span>
+                        </td>
+                      </tr>
+                      <!-- row -->
+                      <tr>
+                        <td>
+                          <div class="p_icon">
+                            <img
+                              src="image/item/remove_bg/00_acc_01_00.png"
+                              alt=""
+                            />
+                          </div>
+                          <span id="p_name">Lorem ipsum dolor</span>
+                        </td>
+                        <td>
+                          <span id="p_brand">zara</span>
+                        </td>
+                        <td>
+                          <span id="p_size">f</span>
+                        </td>
+                        <td>
+                          <span id="p_status">80%new</span>
+                        </td>
+                        <td>
+                          <span id="p_price" class="text-uppercase"
+                            >nt$ <span>999</span></span
+                          >
+                        </td>
+                        <td>
+                          <span id="p_date">2023-01-02</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

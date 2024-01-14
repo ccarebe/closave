@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/00_style.css" />
+    <link rel="stylesheet" href="./css/06_bag.css" />
+    <!-- js -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/00_default.js"></script>
+    <script src="./js/06_01_info.js"></script>
+
+    <title>Shipping | 衣儲 CloSave</title>
+    <style>
+      #main {
+        /*  */
+        .m_left {
+          .title1 {
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+            text-transform: capitalize;
+            padding-left: 10px;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="header" class="container-fluid py-3">
+        <nav class="navbar navbar-expand-lg">
+          <div
+            id="navbar_container"
+            class="container-fluid d-flex justify-content-between"
+          >
+            <div class="header_left header_item ms-lg-5">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="01_newin.html">NEW IN</a>
+                </li>
+                <li class="nav-item ni_1">
+                  <a class="nav-link">SHOP</a>
+                </li>
+                <li class="nav-item ni_2">
+                  <a class="nav-link">EXPLORES</a>
+                </li>
+              </ul>
+            </div>
+            <div class="header_logo">
+              <a class="navbar-brand fs-2 m-0" href="index.html">CLOSAVE</a>
+            </div>
+            <div class="header_right header_item me-lg-5">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">SEARCH</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="05_00_account.html">ACCOUNT</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    role="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#demo"
+                    >BAG</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="07_01_closet.html">CLOSET</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- show menu側邊選單欄 -->
+      <div id="show_menu" class="w-100">
+        <div id="show_menu_left" class="show_menu_item w-50">
+          <img src="" alt="" class="w-100" />
+        </div>
+        <div id="show_menu_right" class="show_menu_item w-50">
+          <!-- shop選單 -->
+          <div class="show_menu_nav show_menu_nav1 d-none">
+            <nav>
+              <ul
+                class="navbar-nav d-flex flex-column text-white col-9 col-lg-6 m-auto ms-lg-5"
+              >
+                <li class="">
+                  <a class="nav-link" href="02_01_tops.html">tops</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_02_bottoms.html">bottoms</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_03_outers.html">outers</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_04_dress_suits.html"
+                    >dresses / sets</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_05_bags_shoes.html"
+                    >bags / shoes</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_06_accessories.html"
+                    >accessories</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link fs-6 fw-lighter" href="02_shop.html"
+                    ><i>SHOP ALL &#8594;</i></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- explore選單 -->
+          <div class="show_menu_nav show_menu_nav2 d-none">
+            <nav>
+              <ul
+                class="navbar-nav d-flex flex-column text-white col-9 col-lg-6 m-auto ms-lg-5"
+              >
+                <li class="">
+                  <a class="nav-link" href="03_01_aboutus.html">about us</a>
+                </li>
+                <hr />
+                <li class="">
+                  <a class="nav-link" href="03_02_founderslook.html"
+                    >Founders Wardrobe Diaries</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="03_03_memberslook.html"
+                    >members Style Showcase</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <form action="">
+        <div id="main" class="d-flex">
+          <!-- 左半部 -->
+          <div class="m_left">
+            <!-- nav -->
+            <div class="text-capitalize">
+              <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+                <ol class="breadcrumb s_text">
+                  <li class="breadcrumb-item">
+                    <a href="06_01_cart.html">cart</a>
+                  </li>
+                  <li class="breadcrumb-item">
+                    <a href="06_02_checkout.html">information</a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    shipping & payment
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <!-- member info check-->
+            <span class="title1">info</span>
+            <div class="info_check">
+              <!-- contact -->
+              <div class="d-flex justify-content-between">
+                <div class="col-10 d-flex">
+                  <span class="text-muted col-2 text-capitalize">contact</span>
+                  <span id="m_account">test@gmail.com</span>
+                </div>
+                <a href="06_02_checkout.html">
+                  <u class="s_text text-capitalize text-muted">change</u>
+                </a>
+              </div>
+              <!-- name -->
+              <div class="d-flex justify-content-between">
+                <div class="col-10 d-flex">
+                  <span class="text-muted col-2 text-capitalize">name</span>
+                  <!-- fname+lname -->
+                  <span id="m_name" class="text-capitalize">rebecca wu</span>
+                </div>
+                <a href="06_02_checkout.html">
+                  <u class="s_text text-capitalize text-muted">change</u>
+                </a>
+              </div>
+              <!-- phone -->
+              <div class="d-flex justify-content-between">
+                <div class="col-10 d-flex">
+                  <span class="text-muted col-2 text-capitalize">phone</span>
+                  <span id="m_phone">0988123456</span>
+                </div>
+                <a href="06_02_checkout.html">
+                  <u class="s_text text-capitalize text-muted">change</u>
+                </a>
+              </div>
+            </div>
+            <!-- shipping/payment -->
+            <div class="info_detail">
+              <!-- shipping method -->
+              <div>
+                <span class="title1">Shipping method</span>
+                <div>
+                  <select
+                    class="form-select form-select-lg"
+                    aria-label="Large select example"
+                  >
+                    <option value="1">In-store Pickup (7-11)</option>
+                    <option value="2">In-store Pickup (Family Mart)</option>
+                    <option value="3" selected>Direct Delivery</option>
+                  </select>
+                </div>
+              </div>
+              <!-- payment -->
+              <div>
+                <span class="title1">
+                  payment
+                  <span class="s_text text-muted">
+                    All transactions are secure and encrypted.
+                  </span>
+                </span>
+                <!-- pay box -->
+                <div class="pay_box">
+                  <!-- credit card -->
+                  <div>
+                    <div class="d-flex align-items-center">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="payment"
+                        id="creditCard"
+                        value="1"
+                        checked
+                      />
+                      <label for="creditCard" class="text-black">
+                        Credit Card
+                      </label>
+                    </div>
+                    <div>
+                      <img src="./image/icon/24_visa.png" alt="visa" />
+                      <img
+                        src="./image/icon/25_mastercard.png"
+                        alt="mastercard"
+                      />
+                      <img src="./image/icon/26_jcb.png" alt="jcb" />
+                    </div>
+                  </div>
+                  <div class="credit_box d-block">
+                    <!-- card number -->
+                    <div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="card_num"
+                        placeholder="Card number"
+                        name="card_num"
+                      />
+                    </div>
+                    <!-- card name -->
+                    <div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="card_name"
+                        placeholder="Name on card"
+                        name="card_name"
+                      />
+                    </div>
+                    <div class="d-flex justify-content-between row gx-2">
+                      <div class="col ps-0">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="card_date"
+                          placeholder="Expiration date (MM/YY)"
+                          name="card_date"
+                        />
+                      </div>
+                      <div class="col pe-0">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="c_cvv"
+                          placeholder="Security code"
+                          name="c_cvv"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- linepay -->
+                  <div>
+                    <div class="d-flex align-items-center">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="payment"
+                        id="linepay"
+                        value="2"
+                      />
+
+                      <label for="linepay" class="text-black"> Line pay </label>
+                      <img
+                        class="ms-2"
+                        src="./image/icon/27_line.png"
+                        alt="line"
+                        style="width: 30px"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- bill address -->
+              <div>
+                <span class="title1">
+                  Billing address
+                  <span class="s_text text-muted">
+                    Select the address that matches your card or payment method.
+                  </span>
+                </span>
+
+                <div class="bill_box">
+                  <!-- Same as shipping address -->
+                  <div>
+                    <div class="d-flex align-items-center">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="b_addr"
+                        id="same_addr"
+                        value="1"
+                        checked
+                      />
+                      <label for="same_addr" class="text-black"
+                        >Same as shipping address</label
+                      >
+                    </div>
+                  </div>
+                  <!-- different billing address -->
+                  <div>
+                    <div class="d-flex align-items-center">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="b_addr"
+                        id="dif_addr"
+                        value="2"
+                      />
+
+                      <label for="dif_addr" class="text-black"
+                        >Use a different billing address</label
+                      >
+                    </div>
+                  </div>
+                  <div class="add_box d-block d-none">
+                    <!-- name -->
+                    <div class="row gx-2">
+                      <!-- first name -->
+                      <div class="form-floating col">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="b_fname"
+                          name="b_fname"
+                          placeholder="Amy"
+                        />
+                        <label for="b_fname">First name</label>
+                      </div>
+                      <!-- last name -->
+                      <div class="form-floating col">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="b_lname"
+                          name="b_lname"
+                          placeholder="Lin"
+                        />
+                        <label for="b_lname">Last name</label>
+                      </div>
+                    </div>
+                    <!-- city -->
+                    <div class="row gx-2">
+                      <!-- city -->
+                      <div class="form-floating col">
+                        <select class="form-select" id="b_city" name="b_city">
+                          <option selected>-----</option>
+                        </select>
+                        <label for="b_city">City</label>
+                      </div>
+                      <!-- district -->
+                      <div class="form-floating col">
+                        <select class="form-select" id="b_dist" name="b_dist">
+                          <option selected>-----</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                        <label for="b_dist">District</label>
+                      </div>
+                    </div>
+                    <!-- address -->
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="b_add"
+                        name="b_add"
+                        placeholder=""
+                      />
+                      <label for="b_add">Address</label>
+                    </div>
+                    <!-- phone -->
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="b_phone"
+                        name="b_phone"
+                        placeholder=""
+                      />
+                      <label for="b_phone">Phone</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- return -->
+            <div class="my-4">
+              <a href="06_02_checkout.html"
+                ><u class="s_text text-muted">< Return to shipping</u></a
+              >
+            </div>
+          </div>
+          <!-- 右半部 -->
+          <div class="m_right">
+            <div id="info_list_box">
+              <div id="list1" class="list d-flex justify-content-between">
+                <div class="d-flex">
+                  <!-- 商品縮圖 -->
+                  <div class="show_amount">1</div>
+                  <div class="p_box me-2">
+                    <img
+                      src="./image/item/remove_bg/00_outer_02_00.png"
+                      alt=""
+                    />
+                  </div>
+                  <!-- 商品資訊 -->
+                  <div class="p-2">
+                    <span class="fw500">Lorem, ipsum dolor</span>
+                    <div class="s_text text-muted">
+                      <sapn id="p_size">s</sapn> /
+                      <sapn id="p_color">white</sapn>
+                    </div>
+                  </div>
+                </div>
+                <!-- 商品單價 -->
+                <div class="p-2">
+                  <span class="text-uppercase fw500">nt$ <span>699</span></span>
+                </div>
+              </div>
+              <div id="list2" class="list d-flex justify-content-between">
+                <div class="d-flex">
+                  <!-- 商品縮圖 -->
+                  <div class="show_amount">1</div>
+                  <div class="p_box me-2">
+                    <img
+                      src="./image/item/remove_bg/00_outer_02_00.png"
+                      alt=""
+                    />
+                  </div>
+                  <!-- 商品資訊 -->
+                  <div class="p-2">
+                    <span class="fw500">Lorem, ipsum dolor</span>
+                    <div class="s_text text-muted">
+                      <sapn id="p_size">s</sapn> /
+                      <sapn id="p_color">white</sapn>
+                    </div>
+                  </div>
+                </div>
+                <!-- 商品單價 -->
+                <div class="p-2">
+                  <span class="text-uppercase fw500">nt$ <span>699</span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hr"></div>
+            <!-- discount code -->
+            <div class="d-flex">
+              <div class="form-floating col-8 me-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="o_discount"
+                  name="o_discount"
+                  placeholder="Amy"
+                />
+                <label for="o_discount">discount code</label>
+              </div>
+              <button
+                id="btn_discount"
+                class="info_btn btn btn-dark col"
+                type="button"
+                disabled
+              >
+                Apply
+              </button>
+            </div>
+            <div class="hr"></div>
+            <!-- subtotal -->
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span>subtotal</span>
+              <span class="text-uppercase fw500"
+                >nt$ <span id="info_sub_total">1,699</span></span
+              >
+            </div>
+            <!-- shipping fee -->
+            <div class="d-flex justify-content-between align-items-center">
+              <span>shipping</span>
+              <!-- <span class="text-uppercase fw500"
+                >nt$ <span id="info_sub_total">1,699</span></span
+              > -->
+              <span class="fw500">free</span>
+            </div>
+            <div class="hr"></div>
+            <!-- total -->
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="fs-5">total</span>
+              <div>
+                <span class="text-uppercase s_text">nt$ </span>
+                <span id="info_total" class="fw500 fs-4">1,699</span>
+              </div>
+            </div>
+            <!-- button: pay now -->
+            <div class="d-flex justify-content-end mt-4">
+              <button class="info_btn btn btn-dark w-100" type="submit">
+                Pay Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

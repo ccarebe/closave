@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/00_style.css" />
+    <link rel="stylesheet" href="./css/07_style.css" />
+    <link rel="stylesheet" href="./css/07_01_form.css" />
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/07_01_form.js"></script>
+    <title>LOOK_EDIT</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./image/icon/Wear Protective Clothing.png"
+    />
+    <style>
+      /*  */
+      #item {
+        padding-bottom: 70px;
+      }
+      /*  */
+      #item .form_pic .upload_pic_main {
+        width: 312px;
+        height: 512px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 6px solid white;
+      }
+      /*  */
+      #item .form_detail {
+        font-size: 1rem;
+      }
+      #item .form_detail tr,
+      td {
+        padding: 5px;
+      }
+
+      #item .form_detail .t1 tr td:nth-child(1) {
+        text-align: right;
+        text-shadow: black -1px 0 5px;
+        color: white;
+      }
+
+      #item .form_detail input,
+      select {
+        border-radius: 50px;
+        border: none;
+        padding: 5px 10px;
+      }
+      #item .form_detail input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+      }
+      /*  */
+      #cover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      /*  */
+      textarea {
+        resize: none;
+        padding: 10px;
+      }
+      select {
+        text-transform: capitalize;
+      }
+      /*  */
+      .main_text {
+        text-transform: capitalize;
+      }
+      /*  */
+      .add_btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        /* background-color: gray; */
+        font-size: 1.5rem;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <div id="bg">
+          <img
+            class="w-100 h-100 object-fit-cover"
+            src="./image/h_img5.jpg"
+            alt=""
+          />
+        </div>
+        <div id="cover"></div>
+      </section>
+      <section>
+        <div id="main" class="p-0 d-flex">
+          <!-- 側邊欄位 -->
+          <div
+            id="sidebar"
+            class="shadow py-5 d-flex flex-column justify-content-center align-items-center"
+          >
+            <div class="photo">
+              <img class="" src="./image/user.png" alt="" />
+            </div>
+            <div class="link">
+              <ul class="h-100 d-flex flex-column justify-content-between">
+                <!-- clothing start -->
+                <li>
+                  <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  <a class="d-flex active" href="07_01_closet.html"></a>
+                </li>
+
+                <!-- on sale start -->
+                <li>
+                  <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  <a class="d-flex" href="07_02_onsale.html"></a>
+                </li>
+
+                <!-- look start -->
+                <li>
+                  <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  <a class="d-flex" href="07_03_look.html"></a>
+                </li>
+
+                <!-- dashboard start -->
+                <li>
+                  <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  <a class="d-flex" href="07_04_dashboard.html"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- 標題區 -->
+          <div
+            id="title"
+            class="shadow d-flex align-items-center justify-content-center"
+          >
+            <span class="d-block text"
+              >EDIT<br />
+              <span
+                class="d-block"
+                style="font-size: 1.2rem; margin-top: -10px"
+              >
+                Your Look Info
+              </span>
+            </span>
+          </div>
+          <!-- INFO -->
+          <div
+            id="item"
+            class="m-0 d-flex flex-column justify-content-center align-items-center"
+          >
+            <form action="" enctype="multipart/form-data" class="d-flex">
+              <div class="form_pic">
+                <!-- 主圖上傳 -->
+                <span class="d-block main_text">*upload your look</span>
+                <div
+                  id="main_imgs"
+                  class="upload_pic_main d-flex flex-wrap"
+                ></div>
+                <div class="d-flex align-items-end">
+                  <input class="p-2" type="file" id="mainLookInput"
+                  accept="image/gif, image/jpeg, image/png" multiple/ required>
+                </div>
+              </div>
+              <!-- 表單文字填寫區域 -->
+              <div class="form_detail d-flex flex-column align-items-center">
+                <!-- 單品填寫區 -->
+                <span class="d-block main_text">
+                  " Please add and select items to wear in this look "
+                </span>
+                <table class="look_edit t1 mt-4">
+                  <!-- 利用Js寫入 -->
+                </table>
+                <!-- 描述填寫區 -->
+                <table class="t2 mt-4">
+                  <tr>
+                    <td>
+                      <textarea
+                        name=""
+                        id=""
+                        cols="50"
+                        rows="5"
+                        maxlength="55"
+                        placeholder="對於此搭配的簡短描述(選填)"
+                      ></textarea>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <!-- 按鈕區域 -->
+              <div class="form_btn">
+                <!-- 點選回到預設值 -->
+                <button
+                  id="look_edit_reset"
+                  class="btn text-white btn-secondary"
+                  type="button"
+                >
+                  Reset
+                </button>
+                <button class="btn btn1 text-white" type="submit">
+                  Edit Look
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

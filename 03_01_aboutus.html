@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/00_style.css" />
+    <link rel="stylesheet" href="./css/01_shop_style.css" />
+    <link rel="stylesheet" href="./css/03_01_look.css" />
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/00_default.js"></script>
+    <script src="./js/01_shop_default.js"></script>
+    <title>About us - CloSave</title>
+    <style>
+      #header {
+        background-color: #fff;
+        mix-blend-mode: screen;
+      }
+      #main {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+          color: white;
+          font-family: Century Schoolbook;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      #main video,
+      #main .cover {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+
+      #main .cover {
+        /* background-color: #2c231d25; */
+        background-color: rgba(20, 48, 72, 0.25);
+        backdrop-filter: blur(3px);
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
+      }
+      .show_box {
+        width: 100%;
+        height: calc(100% - 96px);
+        margin-top: 96px;
+      }
+      .show_up {
+        width: 100%;
+        height: calc(100% - 50px);
+        /* background-color: white; */
+      }
+      .show_down {
+        width: 100%;
+        height: 50px;
+        background-color: #fff;
+      }
+      .div1 {
+        /* background-color: #3b4d882c; */
+        position: relative;
+        /* mix-blend-mode: screen; */
+        .title {
+          position: absolute;
+          bottom: -42px;
+          right: 25px;
+          color: rgba(255, 255, 255, 0.49);
+          font-size: 6rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          font-family: Century Schoolbook;
+          /* text-shadow: black 0px 0px 50px; */
+
+          /* mix-blend-mode: screen; */
+        }
+      }
+      .text {
+        /* background-color: antiquewhite; */
+        font-size: 1.6rem;
+        padding-top: 30px;
+        margin-right: 5%;
+        .title1 {
+          width: 600px;
+          font-weight: bold;
+          font-size: 4rem;
+          margin-bottom: 30px;
+          padding-left: 30px;
+          /* text-transform: uppercase; */
+          /* text-shadow: black 0px 0px 10px; */
+        }
+        .title2 {
+          background-color: rgb(8, 68, 94);
+          width: 600px;
+          height: fit-content;
+          padding: 20px 30px;
+          span {
+            text-shadow: none;
+          }
+        }
+      }
+      .link {
+        /* background-color: aquamarine; */
+
+        width: 100%;
+
+        height: 90%;
+        overflow-x: scroll;
+        padding-left: 5%;
+
+        .link_box {
+          position: relative;
+          flex: 0 0 auto;
+          width: 300px;
+          height: 70%;
+          margin: 0 10px;
+          cursor: pointer;
+          transition: all 0.5s;
+          .p_cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.159);
+            display: flex;
+            align-items: flex-end;
+            font-weight: bold;
+            .t1 {
+              position: absolute;
+              top: 0;
+              left: 20px;
+              color: rgba(255, 255, 255, 0.5);
+              text-shadow: none;
+              font-size: 5rem;
+            }
+            .t2 {
+              font-size: 1.5rem;
+              text-align: right;
+              color: rgba(255, 255, 255);
+              padding: 20px 30px;
+            }
+          }
+        }
+        .link_box:hover {
+          margin-top: -20px;
+          /* transform: translateX(-10px); */
+        }
+      }
+      .link.active {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+        transform: scale(1);
+      }
+      .link::-webkit-scrollbar {
+        display: none;
+      }
+
+      .bg1 {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="header" class="container-fluid py-3">
+        <nav class="navbar navbar-expand-lg">
+          <div
+            id="navbar_container"
+            class="container-fluid d-flex justify-content-between"
+          >
+            <div class="header_left header_item ms-lg-5">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="01_newin.html">NEW IN</a>
+                </li>
+                <li class="nav-item ni_1">
+                  <a class="nav-link">SHOP</a>
+                </li>
+                <li class="nav-item ni_2">
+                  <a class="nav-link">EXPLORES</a>
+                </li>
+              </ul>
+            </div>
+            <div class="header_logo">
+              <a class="navbar-brand fs-2 m-0" href="index.html">CLOSAVE</a>
+            </div>
+            <div class="header_right header_item me-lg-5">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">SEARCH</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="05_00_account.html">ACCOUNT</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    role="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#demo"
+                    >BAG</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="07_01_closet.html">CLOSET</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- show menu側邊選單欄 -->
+      <div id="show_menu" class="w-100">
+        <div id="show_menu_left" class="show_menu_item w-50">
+          <img src="" alt="" class="w-100" />
+        </div>
+        <div id="show_menu_right" class="show_menu_item w-50">
+          <!-- shop選單 -->
+          <div class="show_menu_nav show_menu_nav1 d-none">
+            <nav>
+              <ul
+                class="navbar-nav d-flex flex-column text-white col-9 col-lg-6 m-auto ms-lg-5"
+              >
+                <li class="">
+                  <a class="nav-link" href="02_01_tops.html">tops</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_02_bottoms.html">bottoms</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_03_outers.html">outers</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_04_dress_suits.html"
+                    >dresses / sets</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_05_bags_shoes.html"
+                    >bags / shoes</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_06_accessories.html"
+                    >accessories</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link fs-6 fw-lighter" href="02_shop.html"
+                    ><i>SHOP ALL &#8594;</i></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- explore選單 -->
+          <div class="show_menu_nav show_menu_nav2 d-none">
+            <nav>
+              <ul
+                class="navbar-nav d-flex flex-column text-white col-9 col-lg-6 m-auto ms-lg-5"
+              >
+                <li class="">
+                  <a class="nav-link" href="03_01_aboutus.html">about us</a>
+                </li>
+                <hr />
+                <li class="">
+                  <a class="nav-link" href="03_02_founderslook.html"
+                    >Founders Wardrobe Diaries</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="03_03_memberslook.html"
+                    >members Style Showcase</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="main" class="aboutus p-5">
+        <video autoplay muted loop>
+          <source src="./video/video1.2.mp4" type="video/mp4" />
+        </video>
+
+        <div class="cover">
+          <div class="show_box d-flex flex-column justify-content-start">
+            <div class="show_up d-flex">
+              <div class="col-12 div1">
+                <div class="title">about us</div>
+                <div class="d-flex w-100 h-100">
+                  <div class="text">
+                    <div class="title1 d-flex flex-column">
+                      <span>Introduction</span>
+                      <span>to CloSave</span>
+                    </div>
+                    <div class="title2 shadow">
+                      <span>
+                        Welcome to CloSave, an innovative platform dedicated to
+                        sustainable fashion and the sale of second-hand
+                        clothing.
+                      </span>
+                    </div>
+                  </div>
+                  <div class="link d-flex align-items-center">
+                    <!-- 1 -->
+                    <div class="link_box">
+                      <a href="03_01_01.html">
+                        <img src="./image/h_img13.jpg" alt="" />
+                        <div class="p_cover">
+                          <span class="t1">01</span>
+                          <span class="t2"
+                            >The Challenge of Fast Consumption</span
+                          >
+                        </div>
+                      </a>
+                    </div>
+                    <!-- 2 -->
+                    <div class="link_box">
+                      <a href="03_01_02.html">
+                        <img src="./image/v_img17.jpg" alt="" />
+                        <div class="p_cover">
+                          <span class="t1">02</span>
+                          <span class="t2"
+                            >Our Mission: A Green Fashion Movement</span
+                          >
+                        </div>
+                      </a>
+                    </div>
+                    <!-- 3 -->
+                    <div class="link_box">
+                      <a href="03_01_03.html">
+                        <img src="./image/v_img19.jpg" alt="" />
+                        <div class="p_cover">
+                          <span class="t1">03</span>
+                          <span class="t2"
+                            >Innovative Shopping and Wardrobe Management</span
+                          >
+                        </div>
+                      </a>
+                    </div>
+                    <!-- 4 -->
+                    <div class="link_box">
+                      <a href="03_01_04.html">
+                        <img src="./image/v_img24.jpg" alt="" />
+                        <div class="p_cover">
+                          <span class="t1">04</span>
+                          <span class="t2"
+                            >A Community for Sustainable Fashion</span
+                          >
+                        </div>
+                      </a>
+                    </div>
+                    <!-- 5-->
+                    <div class="link_box">
+                      <a href="03_01_05.html">
+                        <img src="./image/h_img11.jpg" alt="" />
+                        <div class="p_cover">
+                          <span class="t1">05</span>
+                          <span class="t2"
+                            >Our Vision for a Sustainable Future</span
+                          >
+                        </div>
+                      </a>
+                    </div>
+                    <!-- 6 -->
+                    <div class="link_box">
+                      <a href="03_01_06.html">
+                        <img src="./image/h_img14.jpg" alt="" />
+                        <div class="p_cover">
+                          <span class="t1">06</span>
+                          <span class="t2"
+                            >Join Our Eco-Friendly Fashion Community</span
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="col-1 bg-white"></div> -->
+            </div>
+            <div class="show_down"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Click and Drag -->
+    <script>
+      const items = document.querySelector(".link");
+      let isdowm = false;
+      let startX; //現在滑鼠在整個slide的哪個位置
+      let scrollnow; //卷軸現在位置
+
+      function active() {
+        isdowm
+          ? items.classList.add("active")
+          : items.classList.remove("active");
+      }
+
+      items.addEventListener("mousedown", (e) => {
+        isdowm = true;
+        active();
+        scrollnow = items.scrollLeft;
+        startX = e.pageX; //點下去就先取得起點位置
+        console.log("現在位置:" + startX);
+      });
+      items.addEventListener("mouseup", () => {
+        isdowm = false;
+        active();
+      });
+      items.addEventListener("mouseleave", () => {
+        isdowm = false;
+        active();
+      });
+      items.addEventListener("mousemove", (e) => {
+        if (!isdowm) return;
+        let moveafter = e.pageX;
+        let move = moveafter - startX; //實際要移動的量
+        items.scrollLeft = scrollnow - move;
+        //滑鼠移動後的位置-剛開始的位置(startX)= 卷軸移動的距離
+      });
+    </script>
+  </body>
+</html>

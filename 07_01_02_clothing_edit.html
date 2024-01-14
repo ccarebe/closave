@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/00_style.css" />
+    <link rel="stylesheet" href="./css/07_style.css" />
+    <link rel="stylesheet" href="./css/07_01_form.css" />
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/07_01_form.js"></script>
+    <title>CLOTHING_EDIT</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./image/icon/Wear Protective Clothing.png"
+    />
+    <style>
+      /*  */
+      #item {
+        padding-bottom: 70px;
+      }
+      /*  */
+      #item .form_detail tr,
+      td {
+        padding: 5px;
+      }
+      #item .form_detail tr td:nth-child(2n-1) {
+        text-align: right;
+        text-shadow: black -1px 0 5px;
+        color: white;
+      }
+      #item .form_detail tr td:nth-child(2) {
+        padding-right: 50px;
+      }
+      #item .form_detail input,
+      select {
+        border-radius: 50px;
+        border: none;
+        padding: 5px 10px;
+      }
+      #item .form_detail select {
+        text-transform: capitalize;
+      }
+      #item .form_detail input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <div id="bg">
+          <img
+            class="w-100 h-100 object-fit-cover"
+            src="./image/h_img2.jpg"
+            alt=""
+          />
+        </div>
+        <div id="cover"></div>
+      </section>
+      <section>
+        <div id="main" class="">
+          <!-- 側邊欄位 -->
+          <div
+            id="sidebar"
+            class="shadow py-5 d-flex flex-column justify-content-center align-items-center"
+          >
+            <div class="photo">
+              <img class="" src="./image/user.png" alt="" />
+            </div>
+            <div class="link">
+              <ul class="h-100 d-flex flex-column justify-content-between">
+                <!-- clothing start -->
+                <li>
+                  <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  <a class="d-flex active" href="07_01_closet.html"></a>
+                </li>
+
+                <!-- on sale start -->
+                <li>
+                  <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  <a class="d-flex" href="07_02_onsale.html"></a>
+                </li>
+
+                <!-- look start -->
+                <li>
+                  <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  <a class="d-flex" href="07_03_look.html"></a>
+                </li>
+
+                <!-- dashboard start -->
+                <li>
+                  <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  <a class="d-flex" href="07_04_dashboard.html"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- 標題區 -->
+          <div
+            id="title"
+            class="shadow d-flex align-items-center justify-content-center"
+          >
+            <span class="d-block text"
+              >ADD<br />
+              <span
+                class="d-block"
+                style="font-size: 1.2rem; margin-top: -10px"
+              >
+                Your Item Info
+              </span>
+            </span>
+          </div>
+          <!-- 資訊填寫區 -->
+          <div
+            id="item"
+            class="m-0 d-flex flex-column justify-content-center align-items-center"
+          >
+            <form action="">
+              <!-- 上傳圖片區域 -->
+              <div
+                class="form_pic p-4 mx-auto d-flex flex-wrap align-items-center"
+              >
+                <!-- 主圖 -->
+                <div class="">
+                  <span class="d-block main_text"
+                    >*Main image
+                    <span class="fs-6 fw-normal">(required)</span>
+                  </span>
+                  <div
+                    id="main_imgs"
+                    class="upload_pic1 d-flex flex-wrap"
+                  ></div>
+                  <div class="d-flex align-items-end">
+                    <input
+                      name="main_img"
+                      id="mainInput"
+                      class="p-2"
+                      type="file"
+                      accept="image/gif, image/jpeg, image/png"
+                    />
+                  </div>
+                </div>
+                <!-- 附圖 -->
+                <div>
+                  <span class="d-block main_text"
+                    >Additional images
+                    <span class="fs-6 fw-normal">(The limit is 8 photos)</span>
+                  </span>
+                  <div id="sub_imgs" class="upload_pic2 d-flex flex-wrap"></div>
+                  <div class="d-flex align-items-end">
+                    <input name="sub_imgs" id="subInput" class=" p-2"
+                    type="file" accept="image/gif, image/jpeg, image/png"
+                    multiple/ >
+                  </div>
+                </div>
+              </div>
+              <!-- 表單文字填寫區域 -->
+              <div class="form_detail">
+                <table class="">
+                  <tr>
+                    <td><label for="i_category">CATEGORY:</label></td>
+                    <td colspan="3">
+                      <select name="i_category" id="i_category">
+                        <option value="tops">Tops</option>
+                        <option value="bottoms">Bottoms</option>
+                        <option value="outerwears">Outerwears</option>
+                        <option value="dresses/sets">Dresses/Sets</option>
+                        <option value="bags/shoes">Bags/Shoes</option>
+                        <option value="acc">Accessories</option>
+                      </select>
+                      <select name="i_subcategory" id="i_subcategory"></select>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><label for="i_name">NAME:</label></td>
+                    <td><input type="text" name="i_name" id="i_name" /></td>
+                    <td><label for="i_price">PRICE:</label></td>
+                    <td>
+                      <input
+                        type="number"
+                        name="i_price"
+                        id="i_price"
+                        max="99999999"
+                        min="0"
+                      /><span style="font-size: 0.8rem" class="text-uppercase"
+                        >&ensp;(twd)</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="i_size"> SIZE:</label></td>
+                    <td><input type="text" maxlength="10" size="10" /></td>
+                    <td><label for="i_brand">BRAND:</label></td>
+                    <td>
+                      <input type="text" name="i_brand" id="i_brand" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="i_production">PRODUCTION:</label></td>
+                    <td>
+                      <input
+                        type="text"
+                        name="i_production"
+                        id="i_production"
+                        maxlength="10"
+                        size="10"
+                      />
+                    </td>
+                    <td><label for="i_color">COLOR:</label></td>
+                    <td>
+                      <input
+                        type="text"
+                        name="i_color"
+                        id="i_color"
+                        maxlength="10"
+                        size="10"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="i_date">DATE:</label></td>
+                    <td><input type="month" name="i_date" id="i_date" /></td>
+                    <td>SEASON:</td>
+                    <td>
+                      <input
+                        type="checkbox"
+                        name="i_season"
+                        id="spring"
+                        value="spring"
+                      />
+                      <label for="spring">Spring</label>
+                      <input
+                        type="checkbox"
+                        name="i_season"
+                        id="summer"
+                        value="summer"
+                      />
+                      <label for="summer">Summer</label>
+                      <input
+                        type="checkbox"
+                        name="i_season"
+                        id="fall"
+                        value="fall"
+                      />
+                      <label for="fall">Fall</label>
+                      <input
+                        type="checkbox"
+                        name="i_season"
+                        id="winter"
+                        value="winter"
+                      />
+                      <label for="winter">Winter</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><label for="i_fabric">FABRIC:</label></td>
+                    <td><input type="text" /></td>
+                    <td><label for="i_link">LINK:</label></td>
+                    <td><input type="text" name="i_link" id="i_link" /></td>
+                  </tr>
+                </table>
+              </div>
+              <!-- 按鈕區域 -->
+              <div class="form_btn">
+                <button class="btn btn1 text-white" type="submit">
+                  確認修改
+                </button>
+                <button class="btn text-white btn-secondary" type="reset">
+                  重新填寫
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

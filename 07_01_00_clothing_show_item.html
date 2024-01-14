@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/00_style.css" />
+    <link rel="stylesheet" href="./css/07_style.css" />
+    <!-- js -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./js/00_default.js"></script>
+    <script src="./js/07_default.js"></script>
+    <script src="./js/07_01_00_show_item.js"></script>
+    <title>07_01_00_clothing_show_item</title>
+    <style>
+      #sidebar {
+        width: 15%;
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+      #sidebar .photo {
+        width: 180px;
+        height: 180px;
+        margin: 0 0 25px 0;
+      }
+      #sidebar .link {
+        margin: 0;
+      }
+      /*  */
+      #item {
+        width: 85%;
+        height: calc(100% - 60px);
+        position: absolute;
+        top: 60px;
+        left: 15%;
+        background-color: transparent;
+        margin: 0;
+      }
+      #item .title {
+        width: 90%;
+        margin: auto;
+      }
+      .title_item .t_main {
+        font-size: 0.8rem;
+        padding: 4.8px; /* 與下方slidebar的邊寬一樣*/
+        text-transform: capitalize;
+      }
+      #item .show {
+        height: calc(100% - 60px);
+      }
+      #item .show .show_item {
+        width: 45%;
+        height: 100%;
+        /* border: 1px dashed saddlebrown; */
+      }
+      /*  */
+      #item .show .show_item_left #div-show {
+        width: 75%;
+        height: 75%;
+        text-align: center;
+        border: 5px solid transparent;
+      }
+
+      #div-cont {
+        position: relative;
+        width: 75%;
+        height: 20%;
+        overflow: hidden;
+        /* background-color: antiquewhite; */
+      }
+
+      #btnPrev {
+        width: 40px;
+        height: 40px;
+        background-image: url("./image/icon/09_backward.png");
+        background-size: cover;
+        position: absolute;
+        top: 35%;
+        left: 5%;
+        cursor: pointer;
+      }
+
+      #btnNext {
+        width: 40px;
+        height: 40px;
+        background-image: url("./image/icon/10_forward.png");
+        background-size: cover;
+        position: absolute;
+        top: 35%;
+        right: 5%;
+        cursor: pointer;
+      }
+
+      #div-select {
+        height: 100%;
+        width: 300%;
+        position: absolute;
+        /* background-color: black; */
+        left: -0%;
+        transition: 1.5s;
+        display: flex;
+      }
+
+      #div-select div {
+        height: 100%;
+        width: calc(100% / 9);
+      }
+
+      #div-select img {
+        width: 100%;
+        height: 100%;
+      }
+      .addBorder {
+        border: 5px solid transparent;
+      }
+      .showBorder {
+        border-color: #9b5656;
+      }
+      /*  */
+      .show_item_right table {
+        font-size: 1.25rem;
+        text-transform: capitalize;
+      }
+      .show_item_right table td {
+        padding-bottom: 10px;
+      }
+      .show_item_right table td span {
+        padding-right: 5px;
+      }
+
+      .show_item_right table .l_text {
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .show_item_right table .m_text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .size_box {
+        width: 60px;
+        height: 30px;
+        border: 1px solid rgb(154, 154, 154);
+      }
+      .color_box {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: rgb(222, 222, 121);
+      }
+      #btn_box {
+        width: fit-content;
+        border-radius: 50px;
+        transition: all 1s;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      .btn_box {
+        background-color: whitesmoke;
+        border-radius: 50px;
+        padding: 0 5px;
+      }
+      .sale_btn {
+        width: 45px;
+        height: 45px;
+      }
+      #item #btn .btn_item {
+        background-color: #757575;
+      }
+      /*  */
+      #modal {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 10;
+      }
+      #modal .item_up > div,
+      #modal .item_down > div {
+        border-radius: 10px;
+      }
+      #modal table.t2 {
+        text-align: center;
+      }
+      #modal table tr,
+      #modal table td {
+        padding: 10px;
+      }
+      #modal table.t2 tr .s_text,
+      .s_text {
+        font-size: 0.8rem;
+      }
+      #modal table.t2 tr td input {
+        width: 60px;
+      }
+      .hr {
+        border-bottom: 1px solid #ccc;
+        margin: 10px 0;
+        width: 100%;
+      }
+      #modal .form_btn {
+        margin: 30px 0 10px 0;
+      }
+      #modal .form_btn button {
+        border-radius: 500px;
+        width: 100px;
+        height: 35px;
+        padding: 0;
+        border: none;
+        transition: all 0.5s;
+      }
+      #modal .close_btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      /*  */
+      table.si_detail {
+        font-size: 18px;
+      }
+      table.si_detail tr td :last-child {
+        color: rgb(87, 87, 87);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div id="header" class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg w-100 h-100 px-0">
+          <div
+            id="navbar_container"
+            class="container d-flex justify-content-between align-items-center"
+          >
+            <div class="header_right header_item"></div>
+            <div class="header_logo">
+              <a class="navbar-brand m-0" href="index.html">CLOSAVE</a>
+            </div>
+            <div class="header_left header_item">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="01_newin.html">NEW IN</a>
+                </li>
+                <li class="nav-item ni_1">
+                  <a class="nav-link" href="#">SHOP</a>
+                </li>
+                <li class="nav-item ni_2">
+                  <a class="nav-link" href="#">EXPLORES</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- show menu側邊選單欄 -->
+      <div id="show_menu" class="w-100">
+        <div id="show_menu_left" class="show_menu_item w-50">
+          <img src="" alt="" class="w-100" />
+        </div>
+        <div id="show_menu_right" class="show_menu_item w-50">
+          <!-- shop選單 -->
+          <div class="show_menu_nav show_menu_nav1 d-none">
+            <nav>
+              <ul
+                class="navbar-nav d-flex flex-column text-white col-9 col-lg-6 m-auto ms-lg-5"
+              >
+                <li class="">
+                  <a class="nav-link" href="02_01_tops.html">tops</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_02_bottoms.html">bottoms</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_03_outers.html">outers</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_04_dress_suits.html"
+                    >dresses / sets</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_05_bags_shoes.html"
+                    >bags / shoes</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_06_accessories.html"
+                    >accessories</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link fs-6 fw-lighter" href="02_shop.html"
+                    ><i>SHOP ALL &#8594;</i></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- explore選單 -->
+          <div class="show_menu_nav show_menu_nav2 d-none">
+            <nav>
+              <ul
+                class="navbar-nav d-flex flex-column text-white col-9 col-lg-6 m-auto ms-lg-5"
+              >
+                <li class="">
+                  <a class="nav-link" href="03_01_aboutus.html">about us</a>
+                </li>
+                <hr />
+                <li class="">
+                  <a class="nav-link" href="03_02_founderslook.html"
+                    >Founders Wardrobe Diaries</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="03_03_memberslook.html"
+                    >members Style Showcase</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div
+          id="sidebar"
+          class="shadow d-flex flex-column align-items-center justify-content-between"
+        >
+          <div class="d-flex flex-column align-items-center">
+            <div class="photo shadow">
+              <img src="./image/user.png" alt="user" />
+            </div>
+            <div class="link">
+              <ul class="h-100 d-flex flex-column justify-content-between">
+                <li>
+                  <a class="d-flex active" href="07_01_closet.html">
+                    <!-- <img src="./image/icon/00_homePage_black.png" alt="" /> -->
+
+                    <!-- <span>CLOTHING</span> -->
+                  </a>
+                </li>
+                <li>
+                  <a class="d-flex" href="07_02_onsale.html">
+                    <!-- <img src="./image/icon/01_onSale_black.png" alt="" />
+                    <span>ON SALE</span> -->
+                  </a>
+                </li>
+                <li>
+                  <a class="d-flex" href="07_03_look.html">
+                    <!-- <img src="./image/icon/02_book_black.png" alt="" />
+                    <span>LOOK</span> -->
+                  </a>
+                </li>
+                <li>
+                  <a class="d-flex" href="07_04_dashboard.html">
+                    <!-- <img src="./image/icon/03_dashboard_black.png" alt="" />
+                    <span>DASHBOARD</span> -->
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="link logout">
+            <a href="05_00_account.html">
+              <div class="sidebar_btn_box">
+                <i class="bx bx-log-out bx-sm"></i>
+                <span>log out</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div id="item" class="container-fluid p-0">
+          <div class="main_item w-100 h-100">
+            <!-- 上方title -->
+            <div class="title">
+              <div class="title_item">
+                <span class="t_main text-muted"
+                  ><a class="text-muted" href="07_01_closet.html">clothing</a> >
+                  <span class="text-black">tops</span></span
+                >
+              </div>
+            </div>
+            <div class="show d-flex w-100 justify-content-center">
+              <!-- 左半部slidebar -->
+              <div
+                class="show_item show_item_left d-flex flex-column align-items-center position-relative"
+              >
+                <div id="div-show">
+                  <img
+                    id="show"
+                    class="w-100 h-100 object-fit-cover"
+                    src="./image/v_img1.jpg"
+                  />
+                </div>
+                <div id="div-cont" class="">
+                  <div id="div-select">
+                    <!-- <div id="div0" class="addBorder">
+                      <img src="./image/v_img1.jpg" />
+                    </div> -->
+                  </div>
+                </div>
+                <div id="btnPrev"></div>
+                <div id="btnNext"></div>
+              </div>
+              <!-- 右半部相關資訊 -->
+              <div
+                class="show_item show_item_right d-flex justify-content-center"
+              >
+                <div class="w-75">
+                  <table class="w-100">
+                    <!-- 物品名稱 -->
+                    <tr>
+                      <td>
+                        <span class="l_text">
+                          Secret love knit set in beige
+                        </span>
+                      </td>
+                    </tr>
+                    <!-- 物品價格 -->
+                    <tr>
+                      <td>
+                        <span class="m_text"> $2,980.00 TWD </span>
+                      </td>
+                    </tr>
+                    <!-- 物品尺寸 -->
+                    <tr>
+                      <td>
+                        <span>size: </span>
+                        <div>
+                          <div
+                            class="size_box d-flex justify-content-center align-items-center"
+                          >
+                            <span>S</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- 物品顏色 -->
+                    <tr>
+                      <td class="d-flex align-items-center">
+                        <span>Color:</span>
+                        <span>Beige</span>
+                        <span class="color_box d-inline-block"></span>
+                      </td>
+                    </tr>
+                    <!-- 按鈕區 -->
+                    <tr>
+                      <td>
+                        <div id="btn_box" class="my-1">
+                          <div class="d-flex align-items-center" href="#">
+                            <div class="sale_btn">
+                              <img
+                                class="w-100 h-100"
+                                src="./image/icon/06_recycle.png"
+                                alt=""
+                              />
+                            </div>
+                            <span class="btn_msg d-none"
+                              >hit the store shelf</span
+                            >
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- --------------------------- -->
+                  </table>
+                  <table class="si_detail w-100">
+                    <!-- 購買日 -->
+                    <tr>
+                      <td>
+                        <hr />
+                        <span>purchase date: </span>
+                        <span>2023.06</span>
+                      </td>
+                    </tr>
+                    <!-- 品牌 -->
+                    <tr>
+                      <td>
+                        <span>brand: </span>
+                        <span>bisou bisou store</span>
+                      </td>
+                    </tr>
+                    <!-- 材質 -->
+                    <tr>
+                      <td>
+                        <span>fabric: </span>
+                        <span>83% Viscose 17% Polyester</span>
+                      </td>
+                    </tr>
+                    <!-- 產地 -->
+                    <tr>
+                      <td>
+                        <span>production:</span>
+                        <span>taiwan</span>
+                      </td>
+                    </tr>
+                    <!-- 類別 -->
+                    <tr>
+                      <td>
+                        <span>category:</span>
+                        <span>dress</span>
+                      </td>
+                    </tr>
+                    <!-- 適穿季節 -->
+                    <tr>
+                      <td>
+                        <span>season to wear:</span>
+                        <span>winter</span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 下方修改和刪除按鈕 -->
+          <div id="btn" class="d-flex">
+            <a href="07_01_02_clothing_edit.html">
+              <div class="btn_item p-2 shadow">
+                <img
+                  class="w-100 h-100"
+                  src="./image/icon/07_edit.png"
+                  alt="edit"
+                />
+              </div>
+            </a>
+            <a href="#">
+              <div
+                class="btn_item p-2 shadow"
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#delete"
+              >
+                <img
+                  class="w-100 h-100"
+                  src="./image/icon/08_remove.png"
+                  alt="delete"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Modal: 上架-->
+      <section>
+        <div
+          id="modal"
+          class="d-flex flex-column justify-content-center align-items-center d-none"
+        >
+          <!-- 上架 -->
+          <div class="item_up d-none">
+            <div class="bg-white shadow d-flex py-3 px-5">
+              <div class="d-flex flex-column align-items-center">
+                <span class="fs-4 fw-semibold" style="margin: 15px 0 35px 0"
+                  >請填寫物品詳細資訊</span
+                >
+                <div>
+                  <form action="" class="d-flex flex-column align-items-center">
+                    <table class="t1">
+                      <tr>
+                        <td>*產品定價:</td>
+                        <td colspan="5">
+                          <input
+                            type="number"
+                            name="p_price"
+                            id="p_price"
+                            min="0"
+                            required
+                          />
+                          (台幣TWD)
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>*衣物狀況:</td>
+                        <td>
+                          <input
+                            type="radio"
+                            id="level_A"
+                            name="p_status"
+                            value="全新"
+                            required
+                          />
+                          <label for="level_A">全新(A)</label>
+                        </td>
+                        <td>
+                          <input
+                            type="radio"
+                            id="level_B"
+                            name="p_status"
+                            value="近乎全新"
+                          />
+                          <label for="level_B">近乎全新(B)</label>
+                        </td>
+                        <td>
+                          <input
+                            type="radio"
+                            id="level_C"
+                            name="p_status"
+                            value="狀況良好"
+                          />
+                          <label for="level_C">狀況良好(C)</label>
+                        </td>
+                        <td>
+                          <input
+                            type="radio"
+                            id="level_D"
+                            name="p_status"
+                            value="狀況尚可"
+                          />
+                          <label for="level_D">狀況尚可(D)</label>
+                        </td>
+                        <td>
+                          <input
+                            type="radio"
+                            id="level_E"
+                            name="p_status"
+                            value="部分瑕疵"
+                          />
+                          <label for="level_E">部分瑕疵(E)</label>
+                        </td>
+                      </tr>
+                    </table>
+                    <div class="hr"></div>
+                    <div class="my-2 text-center">
+                      <span class="fs-4 text-capitalize">product size</span>
+                    </div>
+                    <!-- type=tops/outers/sets -->
+                    <table class="t2 type1_size">
+                      <tr class="">
+                        <td>尺寸<br /><span class="s_text">Size</span></td>
+                        <td>
+                          肩寬<br /><span class="s_text">Shoulder Width</span>
+                        </td>
+                        <td>
+                          胸圍<br /><span class="s_text">Bust Width</span>
+                        </td>
+                        <td>
+                          衣長<br /><span class="s_text">Full Length</span>
+                        </td>
+                        <td>
+                          袖長<br /><span class="s_text">Sleeve Length</span>
+                        </td>
+                      </tr>
+                      <tr class="">
+                        <!-- 根據原先所輸入的尺寸 -->
+                        <td>S</td>
+                        <td>
+                          <input
+                            type="number"
+                            name="shoulder"
+                            id="shoulder"
+                            min="0"
+                          />
+                        </td>
+                        <td>
+                          <input type="number" name="bust" id="bust" min="0" />
+                        </td>
+                        <td>
+                          <input type="number" name="full" id="full" min="0" />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            name="sleeve"
+                            id="sleeve"
+                            min="0"
+                          />
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- type=bottoms/sets -->
+                    <table class="t2 type2_size d-none">
+                      <tr class="">
+                        <td>尺寸<br /><span class="s_text">Size</span></td>
+                        <td>
+                          腰圍<br /><span class="s_text">Waist Width</span>
+                        </td>
+                        <td>臀圍<br /><span class="s_text">Hip Width</span></td>
+                        <td>
+                          裙長<br /><span class="s_text">Full Length</span>
+                        </td>
+                        <td>
+                          褲長<br /><span class="s_text">Full Length</span>
+                        </td>
+                      </tr>
+                      <tr class="">
+                        <!-- 根據原先所輸入的尺寸 -->
+                        <td>S</td>
+                        <td>
+                          <input
+                            type="number"
+                            name="waist"
+                            id="waist"
+                            min="0"
+                          />
+                        </td>
+                        <td>
+                          <input type="number" name="hip" id="hip" min="0" />
+                        </td>
+                        <td>
+                          <input type="number" name="full" id="full" min="0" />
+                        </td>
+                        <td>
+                          <input type="number" name="full" id="full" min="0" />
+                        </td>
+                      </tr>
+                    </table>
+                    <!-- type=dress -->
+                    <table class="t2 type3_size d-none">
+                      <tr class="">
+                        <td>尺寸<br /><span class="s_text">Size</span></td>
+                        <td>
+                          肩寬<br /><span class="s_text">Shoulder Width</span>
+                        </td>
+                        <td>
+                          胸圍<br /><span class="s_text">Bust Width</span>
+                        </td>
+                        <td>
+                          腰圍<br /><span class="s_text">Waist Width</span>
+                        </td>
+                        <td>
+                          裙長<br /><span class="s_text">Full Length</span>
+                        </td>
+                        <td>
+                          袖長<br /><span class="s_text">Sleeve Length</span>
+                        </td>
+                      </tr>
+                      <tr class="">
+                        <!-- 根據原先所輸入的尺寸 -->
+                        <td>S</td>
+                        <td>
+                          <input
+                            type="number"
+                            name="shoulder"
+                            id="shoulder"
+                            min="0"
+                          />
+                        </td>
+                        <td>
+                          <input type="number" name="bust" id="bust" min="0" />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            name="waist"
+                            id="waist"
+                            min="0"
+                          />
+                        </td>
+                        <td>
+                          <input type="number" name="full" id="full" min="0" />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            name="sleeve"
+                            id="sleeve"
+                            min="0"
+                          />
+                        </td>
+                      </tr>
+                    </table>
+                    <div class="my-2 text-center">
+                      <span class="text-uppercase s_text">(unit:cm)</span>
+                    </div>
+                    <div class="form_btn">
+                      <button class="btn btn-secondary" type="reset">
+                        重新填寫
+                      </button>
+                      <button class="btn btn-success" type="submit">
+                        上架產品
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="close_btn">
+              <button class="btn btn-secondary" onclick="toggleUp()">
+                Close　X
+              </button>
+            </div>
+          </div>
+          <!-- 下架 -->
+          <div class="item_down d-none">
+            <div class="bg-white shadow d-flex py-3 px-5">
+              <div class="d-flex flex-column align-items-center">
+                <span class="fs-5 fw-semibold my-4">是否確定要下架此物品?</span>
+                <div>
+                  <form action="" class="d-flex flex-column align-items-center">
+                    <div class="form_btn my-2">
+                      <button class="btn btn-danger" type="submit">
+                        下架商品
+                      </button>
+                      <button class="btn btn-secondary" type="button">
+                        回上一頁
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="close_btn">
+              <button class="btn btn-secondary" onclick="toggleDown()">
+                Close　X
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Modal: 下架-->
+      <section>
+        <!-- 刪除資訊 -->
+        <div
+          class="modal fade"
+          id="delete"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="deleteLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="deleteLabel">
+                  是否確定要刪除此物品資訊?
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">注意:確定刪除後資料即無法再次復原</div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-danger">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

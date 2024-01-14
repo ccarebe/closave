@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/00_style.css" />
+    <link rel="stylesheet" href="./css/01_shop_style.css" />
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/00_default.js"></script>
+    <script src="./js/01_shop_default.js"></script>
+    <title>衣儲 CloSave | 綠色時尚，衣物的再生之旅</title>
+    <style></style>
+  </head>
+  <body>
+    <header>
+      <div id="header" class="container-fluid py-3">
+        <nav class="navbar navbar-expand-lg">
+          <div
+            id="navbar_container"
+            class="container-fluid d-flex justify-content-between"
+          >
+            <div class="header_left header_item ms-lg-5">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="01_newin.html">NEW IN</a>
+                </li>
+                <li class="nav-item ni_1">
+                  <a class="nav-link">SHOP</a>
+                </li>
+                <li class="nav-item ni_2">
+                  <a class="nav-link">EXPLORES</a>
+                </li>
+              </ul>
+            </div>
+            <div class="header_logo">
+              <a class="navbar-brand fs-2 m-0" href="index.html">CLOSAVE</a>
+            </div>
+            <div class="header_right header_item me-lg-5">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">SEARCH</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="05_00_account.html">ACCOUNT</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    role="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#demo"
+                    >BAG</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="07_01_closet.html">CLOSET</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- show menu側邊選單欄 -->
+      <div id="show_menu" class="w-100">
+        <div id="show_menu_left" class="show_menu_item w-50">
+          <img src="" alt="" class="w-100" />
+        </div>
+        <div id="show_menu_right" class="show_menu_item w-50">
+          <!-- shop選單 -->
+          <div class="show_menu_nav show_menu_nav1 d-none">
+            <nav>
+              <ul
+                class="navbar-nav d-flex flex-column text-white col-9 col-lg-6 m-auto ms-lg-5"
+              >
+                <li class="">
+                  <a class="nav-link" href="02_01_tops.html">tops</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_02_bottoms.html">bottoms</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_03_outers.html">outers</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_04_dress_suits.html"
+                    >dresses / sets</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_05_bags_shoes.html"
+                    >bags / shoes</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_06_accessories.html"
+                    >accessories</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link fs-6 fw-lighter" href="02_shop.html"
+                    ><i>SHOP ALL &#8594;</i></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- explore選單 -->
+          <div class="show_menu_nav show_menu_nav2 d-none">
+            <nav>
+              <ul
+                class="navbar-nav d-flex flex-column text-white col-9 col-lg-6 m-auto ms-lg-5"
+              >
+                <li class="">
+                  <a class="nav-link" href="03_01_aboutus.html">about us</a>
+                </li>
+                <hr />
+                <li class="">
+                  <a class="nav-link" href="03_02_founderslook.html"
+                    >Founders Wardrobe Diaries</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="03_03_memberslook.html"
+                    >members Style Showcase</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div id="item" class="container-fluid p-0 bg-white">
+          <div>
+            <div id="title">
+              <div class="title_item">
+                <span class="t_main d-inline-block">Dress / Suits</span>
+                <span class="t_sub d-inline-block">8</span>
+              </div>
+            </div>
+            <div id="filter" class="d-flex align-items-end">
+              <div>Filter by:</div>
+              <!-- sort -->
+              <div class="dropdown">
+                <button class="dropbtn">
+                  Sort By <span class="arrow">&#11206;</span>
+                </button>
+                <div class="dropdown-content">
+                  <div class="factor">
+                    <input
+                      type="radio"
+                      name="f_sort"
+                      id="f_sort"
+                      value="newest"
+                    />
+                    <span>newest</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="radio"
+                      name="f_sort"
+                      id="f_sort"
+                      value="price_l2h"
+                    />
+                    <span>Price, low to high</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="radio"
+                      name="f_sort"
+                      id="f_sort"
+                      value="price_h2l"
+                    />
+                    <span>Price, high to low</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="radio"
+                      name="f_sort"
+                      id="f_sort"
+                      value="best"
+                    />
+                    <span>Best Sellers</span>
+                  </div>
+                </div>
+              </div>
+              <!-- color -->
+              <div class="dropdown">
+                <button class="dropbtn">
+                  Color <span class="arrow">&#11206;</span>
+                </button>
+                <div class="dropdown-content">
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_color"
+                      id="f_color"
+                      value="beige"
+                    />
+                    <span>beige</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_color"
+                      id="f_color"
+                      value="black"
+                    />
+                    <span>black</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_color"
+                      id="f_color"
+                      value="white"
+                    />
+                    <span>white</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_color"
+                      id="f_color"
+                      value="brown"
+                    />
+                    <span>brown</span>
+                  </div>
+                </div>
+              </div>
+              <!-- size -->
+              <div class="dropdown">
+                <button class="dropbtn">
+                  Size <span class="arrow">&#11206;</span>
+                </button>
+                <div class="dropdown-content">
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_size"
+                      id="f_size"
+                      value="xs"
+                    />
+                    <span>XS</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_size"
+                      id="f_size"
+                      value="s"
+                    />
+                    <span>S</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_size"
+                      id="f_size"
+                      value="m"
+                    />
+                    <span>M</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_size"
+                      id="f_size"
+                      value="l"
+                    />
+                    <span>L</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_size"
+                      id="f_size"
+                      value="free"
+                    />
+                    <span>free size</span>
+                  </div>
+                </div>
+              </div>
+              <!-- category-->
+              <div class="dropdown">
+                <button class="dropbtn">
+                  Category <span class="arrow">&#11206;</span>
+                </button>
+                <div class="dropdown-content">
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_type"
+                      id="f_type"
+                      value="tops"
+                    />
+                    <span>tops</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_type"
+                      id="f_type"
+                      value="bottoms"
+                    />
+                    <span>bottoms</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_type"
+                      id="f_type"
+                      value="outers"
+                    />
+                    <span>outers</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_type"
+                      id="f_type"
+                      value="dress/suits"
+                    />
+                    <span>dress/suits</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_type"
+                      id="f_type"
+                      value="bags/shoes"
+                    />
+                    <span>bags/shoes</span>
+                  </div>
+                  <div class="factor">
+                    <input
+                      type="checkbox"
+                      name="f_type"
+                      id="f_type"
+                      value="accessories"
+                    />
+                    <span>accessories</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="show_product" class="mt-4 mb-5">
+              <div class="main_item">
+                <div class="show m-auto d-flex flex-wrap">
+                  <!-- 每新增一個物品就在此新增div -->
+                  <div class="show_item col-3">
+                    <!-- <a class="d-block w-100 h-100" href="02_01_shop_item.html"> -->
+                    <div class="si_pic">
+                      <img
+                        class="object-fit-cover w-100 h-100"
+                        src="./image/show_product/p_01.WEBP"
+                        alt=""
+                      />
+                    </div>
+                    <div class="si_label">
+                      <span class="d-block fw-medium"
+                        >Linen Cropped Blazer</span
+                      >
+                      <span class="d-block">NT$1,680</span>
+                    </div>
+                    <div class="si_cover">
+                      <div class="wish_icon">
+                        <img
+                          class="w-100 h-100 object-fit-cover"
+                          src="./image/icon/05_wishlist_gray.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <!-- </a> -->
+                  </div>
+                  <!-- 每新增一個物品就在此新增div -->
+                  <div class="show_item col-3">
+                    <!-- <a class="d-block w-100 h-100" href="02_01_shop_item.html"> -->
+                    <div class="si_pic">
+                      <img
+                        class="object-fit-cover w-100 h-100"
+                        src="./image/show_product/p_02.webp"
+                        alt=""
+                      />
+                    </div>
+                    <div class="si_label">
+                      <span class="d-block fw-medium">Ellie Hoops</span>
+                      <span class="d-block">NT$980</span>
+                    </div>
+                    <div class="si_cover">
+                      <div class="wish_icon">
+                        <img
+                          class="w-100 h-100 object-fit-cover"
+                          src="./image/icon/05_wishlist_gray.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <!-- </a> -->
+                  </div>
+                  <!-- 每新增一個物品就在此新增div -->
+                  <div class="show_item col-3">
+                    <!-- <a class="d-block w-100 h-100" href="02_01_shop_item.html"> -->
+                    <div class="si_pic">
+                      <img
+                        class="object-fit-cover w-100 h-100"
+                        src="./image/show_product/p_03.webp"
+                        alt=""
+                      />
+                    </div>
+                    <div class="si_label">
+                      <span class="d-block fw-medium">Myra Mermaid Skirt</span>
+                      <span class="d-block">NT$1,980</span>
+                    </div>
+                    <div class="si_cover">
+                      <div class="wish_icon">
+                        <img
+                          class="w-100 h-100 object-fit-cover"
+                          src="./image/icon/05_wishlist_gray.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <!-- </a> -->
+                  </div>
+                  <!-- 每新增一個物品就在此新增div -->
+                  <div class="show_item col-3">
+                    <!-- <a class="d-block w-100 h-100" href="02_01_shop_item.html"> -->
+                    <div class="si_pic">
+                      <img
+                        class="object-fit-cover w-100 h-100"
+                        src="./image/show_product/p_04.webp"
+                        alt=""
+                      />
+                    </div>
+                    <div class="si_label">
+                      <span class="d-block fw-medium"
+                        >Linen Cropped Blazer</span
+                      >
+                      <span class="d-block">NT$1,680</span>
+                    </div>
+                    <div class="si_cover">
+                      <div class="wish_icon">
+                        <img
+                          class="w-100 h-100 object-fit-cover"
+                          src="./image/icon/05_wishlist_gray.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <!-- </a> -->
+                  </div>
+                  <!-- 每新增一個物品就在此新增div -->
+                  <div class="show_item col-3">
+                    <!-- <a class="d-block w-100 h-100" href="02_01_shop_item.html"> -->
+                    <div class="si_pic">
+                      <img
+                        class="object-fit-cover w-100 h-100"
+                        src="./image/show_product/p_05.webp"
+                        alt=""
+                      />
+                    </div>
+                    <div class="si_label">
+                      <span class="d-block fw-medium"
+                        >KlassiC. X Aura Milla - Vintage Aura Sunnies</span
+                      >
+                      <span class="d-block">NT$2,980</span>
+                    </div>
+                    <div class="si_cover">
+                      <div class="wish_icon">
+                        <img
+                          class="w-100 h-100 object-fit-cover"
+                          src="./image/icon/05_wishlist_gray.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <!-- </a> -->
+                  </div>
+                  <!-- 每新增一個物品就在此新增div -->
+                  <div class="show_item col-3">
+                    <!-- <a class="d-block w-100 h-100" href="02_01_shop_item.html"> -->
+                    <div class="si_pic">
+                      <img
+                        class="object-fit-cover w-100 h-100"
+                        src="./image/show_product/p_06.WEBP"
+                        alt=""
+                      />
+                    </div>
+                    <div class="si_label">
+                      <span class="d-block fw-medium"
+                        >Daybreak Leather Blazer</span
+                      >
+                      <span class="d-block">NT$2,780</span>
+                    </div>
+                    <div class="si_cover">
+                      <div class="wish_icon">
+                        <img
+                          class="w-100 h-100 object-fit-cover"
+                          src="./image/icon/05_wishlist_gray.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <!-- </a> -->
+                  </div>
+                  <!-- 每新增一個物品就在此新增div -->
+                  <div class="show_item col-3">
+                    <!-- <a class="d-block w-100 h-100" href="02_01_shop_item.html"> -->
+                    <div class="si_pic">
+                      <img
+                        class="object-fit-cover w-100 h-100"
+                        src="./image/show_product/p_07.webp"
+                        alt=""
+                      />
+                    </div>
+                    <div class="si_label">
+                      <span class="d-block fw-medium"
+                        >Stranger Tides Earrings</span
+                      >
+                      <span class="d-block">NT$1,080</span>
+                    </div>
+                    <div class="si_cover">
+                      <div class="wish_icon">
+                        <img
+                          class="w-100 h-100 object-fit-cover"
+                          src="./image/icon/05_wishlist_gray.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <!-- </a> -->
+                  </div>
+                  <!-- 每新增一個物品就在此新增div -->
+                  <div class="show_item col-3">
+                    <!-- <a class="d-block w-100 h-100" href="02_01_shop_item.html"> -->
+                    <div class="si_pic">
+                      <img
+                        class="object-fit-cover w-100 h-100"
+                        src="./image/show_product/p_01.WEBP"
+                        alt=""
+                      />
+                    </div>
+                    <div class="si_label">
+                      <span class="d-block fw-medium"
+                        >Linen Cropped Blazer</span
+                      >
+                      <span class="d-block">NT$1,680</span>
+                    </div>
+                    <div class="si_cover">
+                      <div class="wish_icon">
+                        <img
+                          class="w-100 h-100 object-fit-cover"
+                          src="./image/icon/05_wishlist_gray.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <!-- </a> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

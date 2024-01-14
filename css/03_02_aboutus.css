@@ -1,0 +1,116 @@
+body {
+  background-color: transparent;
+}
+span {
+  font-family: Century Schoolbook;
+}
+/*  */
+#header {
+  background-color: #fff;
+  mix-blend-mode: screen;
+}
+#main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+#main video,
+#main .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+#main .cover {
+  background-color: rgba(20, 48, 72, 0.25);
+  backdrop-filter: blur(3px);
+  .show_box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .bx-undo {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      color: black;
+      z-index: 1;
+    }
+  }
+  .show_up {
+    width: 100%;
+    height: 100%;
+    /* height: calc(100% - 50px); */
+  }
+  .empty_div {
+    width: 100%;
+    height: 30px;
+    background-color: #fff;
+  }
+}
+
+/*  */
+.btn_box {
+  position: absolute;
+  top: 40%;
+  width: 35px;
+  height: 35px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  a {
+    color: white;
+    height: fit-content;
+  }
+}
+
+/*  */
+.div_word {
+  background-color: white;
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 1.4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .title_box {
+    width: 80%;
+    .title1 {
+      font-weight: bold;
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+    .title2 {
+      height: fit-content;
+      span {
+        text-shadow: none;
+      }
+    }
+  }
+}
+
+/*  */
+.div_pic {
+  height: 100%;
+  position: relative;
+  .img_box {
+    width: 100%;
+    height: 100%;
+  }
+}

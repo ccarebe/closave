@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/00_style.css" />
+    <link rel="stylesheet" href="./css/07_style.css" />
+    <link rel="stylesheet" href="./css/07_01_form.css" />
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/07_01_form.js"></script>
+    <title>CLOTHING_ADD</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./image/icon/Wear Protective Clothing.png"
+    />
+    <style>
+      /*  */
+      #item .form_detail {
+        margin: auto;
+        width: 80%;
+      }
+      #item .form_detail > div {
+        margin-bottom: 30px;
+      }
+      #item .form_detail .form-floating label {
+        text-transform: capitalize;
+        color: white !important;
+        text-shadow: rgb(42, 42, 42) 1px 1px 3px;
+        padding: 0;
+      }
+      #item .form_detail label::after {
+        background-color: transparent;
+      }
+      #item .form_detail input:not([type="checkbox"]),
+      #item .form_detail select {
+        cursor: pointer;
+        border-radius: 0;
+        background-color: transparent;
+        color: white;
+        border: none;
+        border-bottom: 1px solid white;
+        font-size: 1.15rem;
+      }
+
+      .form-control {
+        padding-bottom: 0 !important;
+      }
+      /*  */
+
+      /* Style the tab content */
+      .tabcontent {
+        min-height: 100vh;
+        display: none;
+        padding: 20px 30px 70px 30px;
+        -webkit-animation: fadeEffect 1s;
+        animation: fadeEffect 1s;
+      }
+      .tabcontent h3,
+      .tabcontent p {
+        text-shadow: gray -1px 0 5px;
+      }
+
+      /* Fade in tabs */
+      @-webkit-keyframes fadeEffect {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeEffect {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      /*  */
+      .form_detail .custom-select {
+        position: relative;
+        max-width: 100%;
+        font-size: 1.15rem;
+        color: #000;
+        margin-top: 1rem;
+      }
+
+      .form_detail .select-button {
+        width: 100%;
+        font-size: 1.15rem;
+        background-color: #fff;
+        padding: 0.5em 1em;
+        border: 1px solid #caced1;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .form_detail .selected-value {
+        text-align: left;
+        text-transform: capitalize;
+      }
+
+      .arrow {
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid #000;
+        transition: transform ease-in-out 0.3s;
+      }
+
+      .select-dropdown {
+        position: absolute;
+        list-style: none;
+        width: 100%;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        border: 1px solid #caced1;
+        border-radius: 4px;
+        padding: 10px;
+        margin-top: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+        transition: 0.5s ease;
+        transform: scaleY(0);
+        opacity: 0;
+        visibility: hidden;
+        color: #000;
+      }
+
+      .select-dropdown:focus-within {
+        box-shadow: 0 10px 25px rgba(94, 108, 233, 0.6);
+      }
+
+      .select-dropdown li {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .select-dropdown li label {
+        width: 100%;
+        padding: 8px 10px;
+        cursor: pointer;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        text-transform: capitalize;
+      }
+
+      .select-dropdown::-webkit-scrollbar {
+        width: 7px;
+      }
+      .select-dropdown::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 25px;
+      }
+
+      .select-dropdown::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 25px;
+      }
+
+      .select-dropdown li:hover,
+      .select-dropdown input:checked ~ label {
+        background-color: #f2f2f2;
+      }
+
+      .select-dropdown input:focus ~ label {
+        background-color: #dfdfdf;
+      }
+
+      .select-dropdown input[type="radio"] {
+        position: absolute;
+        left: 0;
+        opacity: 0;
+      }
+
+      /* interactivity */
+
+      .custom-select.active .arrow {
+        transform: rotate(180deg);
+      }
+
+      .custom-select.active .select-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+        z-index: 5;
+      }
+      /*  */
+      .title_label {
+        text-transform: capitalize;
+        color: white !important;
+        text-shadow: rgb(42, 42, 42) 1px 1px 3px;
+        /* text-shadow: black 1px 0 5px; */
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <div id="bg">
+          <img
+            class="w-100 h-100 object-fit-cover"
+            src="./image/h_img2.jpg"
+            alt=""
+          />
+        </div>
+        <div id="cover"></div>
+      </section>
+      <section>
+        <div id="main" class="">
+          <!-- 側邊欄位 -->
+          <div
+            id="sidebar"
+            class="shadow py-5 d-flex flex-column justify-content-center align-items-center"
+          >
+            <div class="photo">
+              <img class="" src="./image/user.png" alt="" />
+            </div>
+            <div class="link">
+              <ul class="h-100 d-flex flex-column justify-content-between">
+                <!-- clothing start -->
+                <li>
+                  <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  <a class="d-flex active" href="07_01_closet.html"></a>
+                </li>
+
+                <!-- on sale start -->
+                <li>
+                  <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  <a class="d-flex" href="07_02_onsale.html"></a>
+                </li>
+
+                <!-- look start -->
+                <li>
+                  <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  <a class="d-flex" href="07_03_look.html"></a>
+                </li>
+
+                <!-- dashboard start -->
+                <li>
+                  <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  <a class="d-flex" href="07_04_dashboard.html"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- 標題區 -->
+          <div
+            id="title"
+            class="shadow d-flex align-items-center justify-content-center"
+          >
+            <span class="d-block text"
+              >ADD<br />
+              <span
+                class="d-block"
+                style="font-size: 1.2rem; margin-top: -10px"
+              >
+                Your Item Info
+              </span>
+            </span>
+          </div>
+          <!-- 資訊填寫區 -->
+          <div id="item" class="">
+            <form action="">
+              <!-- step1 -->
+              <div id="step1" class="tabcontent">
+                <h3>Step1</h3>
+                <p>Please upload photos of your item.</p>
+                <!-- 上傳圖片區域 -->
+                <div
+                  class="form_pic p-4 mx-auto d-flex flex-wrap align-items-center"
+                >
+                  <!-- 主圖 -->
+                  <div class="">
+                    <span class="d-block main_text"
+                      >*Main image
+                      <span class="fs-6 fw-normal">(required)</span>
+                    </span>
+                    <div
+                      id="main_imgs"
+                      class="upload_pic1 d-flex flex-wrap"
+                    ></div>
+                    <div class="d-flex align-items-end">
+                      <input
+                        name="main_img"
+                        id="mainInput"
+                        class="p-2"
+                        type="file"
+                        accept="image/gif, image/jpeg, image/png"
+                      />
+                    </div>
+                  </div>
+                  <!-- 附圖 -->
+                  <div>
+                    <span class="d-block main_text"
+                      >Additional images
+                      <span class="fs-6 fw-normal"
+                        >(The limit is 8 photos)</span
+                      >
+                    </span>
+                    <div
+                      id="sub_imgs"
+                      class="upload_pic2 d-flex flex-wrap"
+                    ></div>
+                    <div class="d-flex align-items-end">
+                      <input name="sub_imgs" id="subInput" class=" p-2"
+                      type="file" accept="image/gif, image/jpeg, image/png"
+                      multiple/ >
+                    </div>
+                  </div>
+                </div>
+                <!-- 按鈕區域 -->
+                <div class="form_btn">
+                  <button class="next_btn btn btn1 text-white" type="button">
+                    NEXT　&gt;
+                  </button>
+                </div>
+              </div>
+              <!-- step2 -->
+              <div id="step2" class="tabcontent">
+                <h3>Step2</h3>
+                <p>Please fill in your item information.</p>
+                <!-- 表單文字填寫區域 -->
+                <div
+                  class="form_detail d-flex flex-column justify-content-between"
+                >
+                  <!-- 類別 -->
+                  <div class="d-flex justify-content-between">
+                    <!-- category -->
+                    <div class="col-5">
+                      <label class="title_label">*category</label>
+                      <div id="i_class" class="custom-select">
+                        <button
+                          type="button"
+                          class="select-button"
+                          role="combobox"
+                          aria-labelledby="select button"
+                          aria-haspopup="listbox"
+                          aria-expanded="false"
+                          aria-controls="select-dropdown"
+                        >
+                          <span class="selected-value">select</span>
+                          <span class="arrow"></span>
+                        </button>
+                        <ul
+                          class="select-dropdown"
+                          role="listbox"
+                          id="select-dropdown"
+                        >
+                          <li role="option">
+                            <input
+                              type="radio"
+                              id="tops"
+                              name="i_category"
+                              value="tops"
+                            />
+                            <label for="tops"><i class="bx"></i>tops</label>
+                          </li>
+                          <li role="option">
+                            <input
+                              type="radio"
+                              id="bottoms"
+                              name="i_category"
+                              value="bottoms"
+                            />
+                            <label for="bottoms"
+                              ><i class="bx"></i>bottoms</label
+                            >
+                          </li>
+                          <li role="option">
+                            <input
+                              type="radio"
+                              id="outers"
+                              name="i_category"
+                              value="outerwears"
+                            />
+                            <label for="outers"
+                              ><i class="bx"></i>outerwears</label
+                            >
+                          </li>
+                          <li role="option">
+                            <input
+                              type="radio"
+                              id="dresses/sets"
+                              name="i_category"
+                              value="dresses/sets"
+                            />
+                            <label for="dresses/sets"
+                              ><i class="bx"></i>dresses/sets</label
+                            >
+                          </li>
+                          <li role="option">
+                            <input
+                              type="radio"
+                              id="bags/shoes"
+                              name="i_category"
+                              value="bags/shoes"
+                            />
+                            <label for="bags/shoes"
+                              ><i class="bx"></i>bags/shoes</label
+                            >
+                          </li>
+                          <li role="option">
+                            <input
+                              type="radio"
+                              id="acc"
+                              name="i_category"
+                              value="acc"
+                            />
+                            <label for="acc"
+                              ><i class="bx"></i>accessories</label
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- subcategory -->
+                    <div class="col-6">
+                      <label class="title_label">*subcategory</label>
+                      <div id="i_sub_class" class="custom-select">
+                        <button
+                          type="button"
+                          class="select-button"
+                          role="combobox"
+                          aria-labelledby="select button"
+                          aria-haspopup="listbox"
+                          aria-expanded="false"
+                          aria-controls="select-dropdown"
+                          disabled
+                        >
+                          <span class="selected-value">select</span>
+                          <span class="arrow"></span>
+                        </button>
+                        <ul
+                          class="select-dropdown"
+                          role="listbox"
+                          id="select-dropdown"
+                        ></ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 第2排 -->
+                  <div class="d-flex justify-content-between">
+                    <!-- 名稱 -->
+                    <div class="form-floating col-6">
+                      <input
+                        type="text"
+                        name="i_name"
+                        id="i_name"
+                        class="form-control shadow-none"
+                        placeholder=""
+                        required
+                      />
+                      <label for="i_name">*item name</label>
+                    </div>
+                    <!-- 價格 -->
+                    <div class="form-floating col-2">
+                      <input
+                        type="number"
+                        name="i_price"
+                        id="i_price"
+                        max="99999999"
+                        min="0"
+                        class="form-control shadow-none"
+                        placeholder=""
+                        required
+                      />
+                      <label for="i_price"
+                        >*price<span
+                          style="font-size: 0.8rem"
+                          class="text-uppercase fw-normal"
+                          >&ensp;(twd)</span
+                        ></label
+                      >
+                    </div>
+                    <!-- 尺寸 -->
+                    <div class="form-floating col-3">
+                      <input
+                        type="text"
+                        maxlength="10"
+                        size="10"
+                        class="form-control shadow-none"
+                        placeholder=""
+                        required
+                      />
+                      <label for="i_size">*size</label>
+                    </div>
+                  </div>
+                  <!-- 第3排 -->
+                  <div class="d-flex justify-content-between">
+                    <!-- 品牌 -->
+                    <div class="form-floating col-6">
+                      <input
+                        type="text"
+                        name="i_brand"
+                        id="i_brand"
+                        class="form-control shadow-none"
+                        placeholder=""
+                      />
+                      <label for="i_brand">brand</label>
+                    </div>
+                    <!-- 顏色 -->
+                    <div class="form-floating col-2">
+                      <input
+                        type="text"
+                        name="i_color"
+                        id="i_color"
+                        maxlength="10"
+                        size="10"
+                        class="form-control shadow-none"
+                        placeholder=""
+                      />
+                      <label for="i_color">color</label>
+                    </div>
+                    <!-- 生產地 -->
+                    <div class="form-floating col-3">
+                      <input
+                        type="text"
+                        name="i_production"
+                        id="i_production"
+                        maxlength="10"
+                        size="10"
+                        class="form-control shadow-none"
+                        placeholder=""
+                      />
+                      <label for="i_production">production</label>
+                    </div>
+                  </div>
+                  <!-- 第4排 -->
+                  <div class="d-flex justify-content-between">
+                    <!-- 購買日期 -->
+                    <div class="form-floating col-4">
+                      <input
+                        type="month"
+                        name="i_date"
+                        id="i_date"
+                        class="form-control shadow-none"
+                        placeholder=""
+                      />
+                      <label for="i_date">Purchase date</label>
+                    </div>
+                    <!-- fabric -->
+                    <div class="form-floating col-7">
+                      <input
+                        type="text"
+                        name="i_fabric"
+                        id="i_fabric"
+                        class="form-control shadow-none"
+                        placeholder=""
+                      />
+                      <label for="i_fabric">fabric</label>
+                    </div>
+                  </div>
+                  <!-- 第5排 -->
+                  <div class="d-flex justify-content-between">
+                    <!-- 連結 -->
+                    <div class="form-floating col-7">
+                      <input
+                        type="text"
+                        name="i_link"
+                        id="i_link"
+                        class="form-control shadow-none"
+                        placeholder=""
+                      />
+                      <label for="i_link">link</label>
+                    </div>
+                  </div>
+                  <!-- 第6排:適穿季節 -->
+                  <div>
+                    <label class="title_label">season to wear</label><br />
+                    <div class="form-check form-check-inline">
+                      <input
+                        type="checkbox"
+                        name="i_season"
+                        id="spring"
+                        value="spring"
+                      />
+                      <label for="spring">Spring</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        type="checkbox"
+                        name="i_season"
+                        id="summer"
+                        value="summer"
+                      />
+                      <label for="summer">Summer</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        type="checkbox"
+                        name="i_season"
+                        id="fall"
+                        value="fall"
+                      />
+                      <label for="fall">Fall</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        type="checkbox"
+                        name="i_season"
+                        id="winter"
+                        value="winter"
+                      />
+                      <label for="winter">Winter</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 按鈕區域 -->
+                <div class="form_btn">
+                  <button
+                    class="pre_btn btn text-white btn-secondary"
+                    type="button"
+                  >
+                    &lt;　BACK
+                  </button>
+                  <button class="btn btn1 text-white" type="submit">
+                    ADD ITEM
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

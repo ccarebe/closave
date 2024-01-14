@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/00_style.css" />
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/00_default.js"></script>
+    <title>衣儲 CloSave | 綠色時尚，衣物的再生之旅</title>
+    <style>
+      .class2 {
+        height: fit-content !important;
+      }
+      .class2 .row {
+        width: 100%;
+        height: 400px;
+      }
+      .class2 .class_item {
+        width: 28%;
+      }
+      /*  */
+      /* .slogan span {
+        font-size: 1.2rem;
+      } */
+
+      /*  */
+      .title2 {
+        height: 100px !important;
+        margin: 150px auto 30px auto !important;
+      }
+
+      .title2 .slogan {
+        width: fit-content;
+        margin: auto;
+        text-align: center;
+      }
+
+      .sub_title span {
+        line-height: 100px;
+        font-size: 1rem !important;
+      }
+      .change_ff {
+        /* font-family: Century Schoolbook; */
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      AOS.init();
+    </script>
+    <header>
+      <div id="header" class="container-fluid py-3">
+        <nav class="navbar navbar-expand-lg">
+          <div
+            id="navbar_container"
+            class="container-fluid d-flex justify-content-between"
+          >
+            <div class="header_left header_item ms-lg-5">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="01_newin.html">NEW IN</a>
+                </li>
+                <li class="nav-item ni_1">
+                  <a class="nav-link">SHOP</a>
+                </li>
+                <li class="nav-item ni_2">
+                  <a class="nav-link">EXPLORES</a>
+                </li>
+              </ul>
+            </div>
+            <div class="header_logo">
+              <a class="navbar-brand fs-2 m-0" href="index.html">CLOSAVE</a>
+            </div>
+            <div class="header_right header_item me-lg-5">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">SEARCH</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="05_00_account.html">ACCOUNT</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    role="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#demo"
+                    >BAG</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="07_01_closet.html">CLOSET</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- show menu側邊選單欄 -->
+      <div id="show_menu" class="w-100">
+        <div id="show_menu_left" class="show_menu_item w-50">
+          <img src="" alt="" class="w-100" />
+        </div>
+        <div id="show_menu_right" class="show_menu_item w-50">
+          <!-- shop選單 -->
+          <div class="show_menu_nav show_menu_nav1 d-none">
+            <nav>
+              <ul
+                class="navbar-nav d-flex flex-column text-white col-9 col-lg-6 m-auto ms-lg-5"
+              >
+                <li class="">
+                  <a class="nav-link" href="02_01_tops.html">tops</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_02_bottoms.html">bottoms</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_03_outers.html">outers</a>
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_04_dress_suits.html"
+                    >dresses / sets</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_05_bags_shoes.html"
+                    >bags / shoes</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="02_06_accessories.html"
+                    >accessories</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link fs-6 fw-lighter" href="02_shop.html"
+                    ><i>SHOP ALL &#8594;</i></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- explore選單 -->
+          <div class="show_menu_nav show_menu_nav2 d-none">
+            <nav>
+              <ul
+                class="navbar-nav d-flex flex-column text-white col-9 col-lg-6 m-auto ms-lg-5"
+              >
+                <li class="">
+                  <a class="nav-link" href="03_01_aboutus.html">about us</a>
+                </li>
+                <hr />
+                <li class="">
+                  <a class="nav-link" href="03_02_founderslook.html"
+                    >Founders Wardrobe Diaries</a
+                  >
+                </li>
+                <li class="">
+                  <a class="nav-link" href="03_03_memberslook.html"
+                    >members Style Showcase</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- slidebar -->
+      <section>
+        <div id="slidebar" class="container-fluid p-0 shadow">
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide"
+            data-bs-ride="carousel"
+            data-bs-pause="false"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+            <div class="carousel-inner">
+              <!-- banner1 -->
+              <div class="carousel-item active" data-bs-interval="5000">
+                <img
+                  src="./image/h_img7.jpg"
+                  class="d-block w-100"
+                  alt="banner1"
+                />
+                <div
+                  id="banner1"
+                  class="position-absolute bottom-0 end-0 d-flex flex-column justify-content-center align-items-center shadow"
+                >
+                  <div class="b1_title d-flex flex-column align-items-center">
+                    <span class="b1_title1">綠色時尚</span>
+                    <span class="b1_title2">#衣物的再生之旅</span>
+                    <span class="b1_title2">#從這裡開始</span>
+                  </div>
+                  <a href="02_shop.html">
+                    <div class="b1_btn shadow">
+                      <span>SHOP NOW ></span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- banner2 -->
+              <div class="carousel-item" data-bs-interval="5000">
+                <img
+                  src="./image/v_img2.jpg"
+                  class="d-block w-100"
+                  alt="banner2"
+                />
+                <div
+                  id="banner2"
+                  class="w-100 h-100 position-absolute top-0 start-0"
+                >
+                  <div
+                    class="b2_cover w-50 h-100 d-flex flex-column justify-content-center align-items-center shadow"
+                  >
+                    <div class="b2_title d-flex flex-column align-items-center">
+                      <span class="b2_title1">會員募集中</span>
+                      <span class="b2_title2">#開始建立您的專屬衣櫥</span>
+                    </div>
+                    <a href="05_00_account.html">
+                      <div class="b2_btn shadow">
+                        <span>CLOSET ></span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- banner3 -->
+              <div
+                class="carousel-item position-relative"
+                data-bs-interval="5000"
+              >
+                <img
+                  src="./image/v_img3.jpg"
+                  class="d-block w-100"
+                  alt="banner3"
+                />
+                <div
+                  id="banner3"
+                  class="w-100 h-100 position-absolute top-0 start-0 d-flex flex-column justify-content-center align-items-center"
+                >
+                  <div
+                    class="b3_cover_box position-absolute d-flex w-100 h-100 justify-content-between"
+                  >
+                    <div class="b3_cover b3_c1 shadow"></div>
+                    <div class="b3_cover b3_c2 shadow"></div>
+                  </div>
+                  <div
+                    class="b3_title_box d-flex flex-column align-items-center"
+                  >
+                    <div class="b3_title d-flex flex-column align-items-center">
+                      <span class="b3_title1">從衣儲開始，永續時尚的旅程</span>
+                      <span class="b3_title2"
+                        >Starting from <span class="change_ff">CloSave</span>,
+                        journeying toward sustainable fashion</span
+                      >
+                    </div>
+                    <a href="05_00_account.html">
+                      <div class="b3_btn shadow">
+                        <span>GO GREEN ></span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- slogan -->
+      <section>
+        <div
+          id="title"
+          class="container p-0 mt-lg-5 mb-lg-5"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
+          <div class="cover w-100 h-100">
+            <div class="slogan text-white">
+              <span>" Practice sustainable fashion."</span>
+              <!-- <span>"Your style, your choice, our eco-mission."</span> -->
+            </div>
+          </div>
+        </div>
+        <!-- slogan -->
+        <div
+          id="title"
+          class="sub_title title2 container p-0"
+          data-aos="fade-up-left"
+          data-aos-duration="2500"
+          style="margin-top: 0px !important"
+        >
+          <div class="slogan text-white">
+            <!-- <span>"Your style, your choice, our eco-mission."</span> -->
+            <span>"一次購物，永續愛地球。"</span>
+            <!-- <span>Practice sustainable fashion</span> -->
+          </div>
+        </div>
+      </section>
+      <!-- classes block -->
+      <section>
+        <div id="class" class="container d-flex flex-wrap p-0">
+          <div class="row h-100 g-4 p-0">
+            <div
+              class="class_item col-lg-4"
+              data-aos="fade-up-right"
+              data-aos-duration="2500"
+            >
+              <a href="02_01_tops.html">
+                <img class="d-block" src="./image/v_img2.jpg" alt="" />
+                <div class="span"><span>TOPS </span><span> &rarr; </span></div>
+                <div class="cover"></div>
+              </a>
+            </div>
+            <div
+              class="class_item col-lg-4"
+              data-aos="fade-up"
+              data-aos-duration="2500"
+            >
+              <a href="02_02_bottoms.html">
+                <img class="d-block" src="./image/v_img3.jpg" alt="" />
+                <div class="span">
+                  <span>BOTTOMS </span><span> &rarr; </span>
+                </div>
+                <div class="cover w-100 h-100"></div>
+              </a>
+            </div>
+            <div
+              class="class_item col-lg-4"
+              data-aos="fade-up-left"
+              data-aos-duration="2500"
+            >
+              <a href="02_03_outers.html">
+                <img class="d-block" src="./image/v_img4.jpg" alt="" />
+                <div class="span">
+                  <span>OUTERS </span><span> &rarr; </span>
+                </div>
+                <div class="cover w-100 h-100"></div>
+              </a>
+            </div>
+            <div
+              class="class_item col-lg-4"
+              data-aos="fade-up"
+              data-aos-duration="1900"
+            >
+              <a href="02_04_dress_suits.html">
+                <img class="d-block" src="./image/v_img5.jpg" alt="" />
+                <div class="span">
+                  <span>DRESS/SUITS </span><span> &rarr; </span>
+                </div>
+                <div class="cover w-100 h-100"></div>
+              </a>
+            </div>
+            <div
+              class="class_item col-lg-4"
+              data-aos="fade-up"
+              data-aos-duration="2200"
+            >
+              <a href="02_05_bags_shoes.html">
+                <img class="d-block" src="./image/v_img6.jpg" alt="" />
+                <div class="span">
+                  <span>BAGS/SHOES </span><span> &rarr; </span>
+                </div>
+                <div class="cover w-100 h-100"></div>
+              </a>
+            </div>
+            <div
+              class="class_item col-lg-4"
+              data-aos="fade-up"
+              data-aos-duration="2500"
+            >
+              <a href="02_06_accessories.html">
+                <img class="d-block" src="./image/v_img7.jpg" alt="" />
+                <div class="span">
+                  <span>ACCESSORIES </span><span> &rarr; </span>
+                </div>
+                <div class="cover w-100 h-100"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- classes2 block -->
+      <section>
+        <div id="class" class="class2 p-0 g-0 mt-5">
+          <!-- slogan -->
+          <div
+            id="title"
+            class="sub_title title2 container p-0 my-3"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+          >
+            <div class="slogan text-white">
+              <!-- <span>"Your style, your choice, our eco-mission."</span> -->
+              <!-- <span>"一次購物，永續愛地球。"</span> -->
+              <span>"Redefine style, reclaim the planet."</span>
+            </div>
+          </div>
+          <!-- row1 -->
+          <div class="row p-0">
+            <div
+              class="class_item col-lg-3 h-100 p-0"
+              data-aos="fade-up-right"
+              data-aos-duration="2500"
+            >
+              <a href="01_newin.html">
+                <img
+                  class="d-block"
+                  src="./image/show_product/p_01.WEBP"
+                  alt=""
+                />
+                <div class="span">
+                  <span>NEW IN </span><span> &rarr; </span>
+                </div>
+                <div class="cover"></div>
+              </a>
+            </div>
+            <div
+              class="class_item col-lg-3 h-100 p-0"
+              data-aos="fade-up"
+              data-aos-duration="2500"
+            >
+              <a href="01_newin.html">
+                <img
+                  class="d-block"
+                  src="./image/show_product/p_06.webp"
+                  alt=""
+                />
+                <div class="span">
+                  <span>NEW IN </span><span> &rarr; </span>
+                </div>
+                <div class="cover w-100 h-100"></div>
+              </a>
+            </div>
+            <div
+              class="class_item col-lg-3 h-100 p-0"
+              data-aos="fade-up-left"
+              data-aos-duration="2500"
+            >
+              <a href="01_newin.html">
+                <img
+                  class="d-block"
+                  src="./image/show_product/p_02.webp"
+                  alt=""
+                />
+                <div class="span">
+                  <span>NEW IN </span><span> &rarr; </span>
+                </div>
+                <div class="cover w-100 h-100"></div>
+              </a>
+            </div>
+          </div>
+          <!-- slogan -->
+          <div
+            id="title"
+            class="sub_title title2 container p-0 my-3"
+            data-aos="fade-up"
+            data-aos-duration="1500"
+          >
+            <div class="slogan text-white">
+              <span>"時尚新生，從你的衣櫥開始"</span>
+              <!-- <span>Practice sustainable fashion</span> -->
+            </div>
+          </div>
+          <!-- row2 -->
+          <div class="row p-0 g-0 justify-content-end">
+            <!--  -->
+            <div
+              class="class_item col-lg-3 h-100 p-0"
+              data-aos="fade-up-right"
+              data-aos-duration="2500"
+            >
+              <a href="07_01_closet.html">
+                <img
+                  class="d-block"
+                  src="./image/show_item/00_outer_02_00.JPG"
+                  alt=""
+                />
+                <div class="span">
+                  <span>EXPLORE </span><span> &rarr; </span>
+                </div>
+                <div class="cover w-100 h-100"></div>
+              </a>
+            </div>
+            <!--  -->
+            <div
+              class="class_item col-lg-3 h-100 p-0"
+              data-aos="fade-up"
+              data-aos-duration="2200"
+            >
+              <a href="07_01_closet.html">
+                <img
+                  class="d-block"
+                  src="./image/show_item/00_top_01_00.JPG"
+                  alt=""
+                />
+                <div class="span">
+                  <span>EXPLORE </span><span> &rarr; </span>
+                </div>
+                <div class="cover w-100 h-100"></div>
+              </a>
+            </div>
+            <!--  -->
+            <div
+              class="class_item col-lg-3 h-100 p-0"
+              data-aos="fade-up-left"
+              data-aos-duration="2300"
+            >
+              <a href="07_01_closet.html">
+                <img
+                  class="d-block"
+                  src="./image/show_item/00_bottom_01_00.JPG"
+                  alt=""
+                />
+                <div class="span">
+                  <span>EXPLORE </span><span> &rarr; </span>
+                </div>
+                <div class="cover w-100 h-100"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div id="footer"></div>
+    </footer>
+  </body>
+</html>
